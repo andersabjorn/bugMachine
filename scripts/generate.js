@@ -39,6 +39,18 @@ function getNextDayNumber() {
     return 1;
   }
 
+  const currentJsonPath = path.join(DAYS_DIR, "current.json");
+  if (fs.existsSync(currentJsonPath)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(currentJsonPath, "utf8"));
+      if (typeof data.day === "number" && data.day >= 1) {
+        return data.day + 1;
+      }
+    } catch (_) {
+      // fall through to directory-based calculation
+    }
+  }
+
   const entries = fs.readdirSync(DAYS_DIR);
   const dayNumbers = entries
     .filter((e) => /^day\d+$/.test(e))
