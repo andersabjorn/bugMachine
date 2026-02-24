@@ -1,0 +1,21 @@
+{
+  "day": 1,
+  "generatedAt": "2026-02-24T08:39:53.438Z",
+  "bugs": [
+    "BubbleSort",
+    "Stack",
+    "Queue",
+    "BinarySearch",
+    "RecursionBug",
+    "LinqBug",
+    "NullReferenceBug",
+    "DictionaryBug",
+    "StringReverseBug",
+    "LinkedList",
+    "MergeSort",
+    "QuickSort",
+    "TreeTraversal",
+    "AsyncAwaitBug",
+    "MinHeap"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "bug-machine",
+  "version": "1.0.0",
+  "description": "Generera buggar i C# att hitta och fixa - inspirerat av ThePrimeagen's kata-machine",
+  "scripts": {
+    "generate": "node ./scripts/generate.js",
+    "clear": "node ./scripts/clear.js",
+    "test": "dotnet test src/BugMachine.Tests/ --logger \"console;verbosity=normal\"",
+    "test:quiet": "dotnet test src/BugMachine.Tests/"
+  },
+  "keywords": ["csharp", "dotnet", "bugs", "learning", "practice"],
+  "license": "MIT"
+}
