@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="62e49a6c-5848-4c89-a10d-09fc12002c5a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/days/current.json" beforeDir="false" afterPath="$PROJECT_DIR$/days/current.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/AsyncAwaitBug.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/BinarySearch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/BubbleSort.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/DictionaryBug.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/LinkedList.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/LinqBug.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/MergeSort.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/MinHeap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/NullReferenceBug.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/Queue.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/QuickSort.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/RecursionBug.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/Stack.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/StringReverseBug.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day2/TreeTraversal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/AsyncAwaitBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/AsyncAwaitBug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/BinarySearch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/BinarySearch.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/BubbleSort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/BubbleSort.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/DictionaryBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/DictionaryBug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/LinkedList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/LinkedList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/LinqBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/LinqBug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/MergeSort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/MergeSort.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/MinHeap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/MinHeap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/NullReferenceBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/NullReferenceBug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/Queue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/Queue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/QuickSort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/QuickSort.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/RecursionBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/RecursionBug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/Stack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/Stack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/StringReverseBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/StringReverseBug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/days/day3/TreeTraversal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/days/day3/TreeTraversal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/AsyncAwaitBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/AsyncAwaitBug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/BinarySearch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/BinarySearch.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/BubbleSort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/BubbleSort.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/DictionaryBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/DictionaryBug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/LinkedList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/LinkedList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/LinqBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/LinqBug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/MergeSort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/MergeSort.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/MinHeap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/MinHeap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/NullReferenceBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/NullReferenceBug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/Queue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/Queue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/QuickSort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/QuickSort.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/RecursionBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/RecursionBug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/Stack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/Stack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/StringReverseBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/StringReverseBug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/TreeTraversal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/TreeTraversal.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/BugMachine.Tests/bugTest.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3A6usqZROpRunypOpFxmYJMNZFc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;claude/fix-generator-folder-creation-qIM2F&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="62e49a6c-5848-4c89-a10d-09fc12002c5a" name="Changes" comment="" />
+      <created>1771925551326</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1771925551326</updated>
+      <workItem from="1771925554924" duration="115000" />
+      <workItem from="1771932734428" duration="5022000" />
+      <workItem from="1771944681477" duration="1380000" />
+      <workItem from="1772986253801" duration="1840000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
