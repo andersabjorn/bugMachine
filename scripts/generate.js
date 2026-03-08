@@ -39,6 +39,18 @@ function getNextDayNumber() {
     return 1;
   }
 
+  const currentJsonPath = path.join(DAYS_DIR, "current.json");
+  if (fs.existsSync(currentJsonPath)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(currentJsonPath, "utf8"));
+      if (typeof data.day === "number" && data.day >= 1) {
+        return data.day + 1;
+      }
+    } catch (_) {
+      // fall through to directory-based calculation
+    }
+  }
+
   const entries = fs.readdirSync(DAYS_DIR);
   const dayNumbers = entries
     .filter((e) => /^day\d+$/.test(e))
@@ -164,6 +176,15 @@ try {
   clearCurrentDir();
 
   const { generated, skipped } = generateDay(nextDay);
+
+  // Skapa en mapp för den aktuella dagen (likt kata-machine)
+  const currentDayDir = path.join(DAYS_DIR, `day${nextDay}`);
+  fs.mkdirSync(currentDayDir, { recursive: true });
+  const csFiles = fs.readdirSync(CURRENT_DIR).filter((f) => f.endsWith(".cs"));
+  for (const file of csFiles) {
+    fs.copyFileSync(path.join(CURRENT_DIR, file), path.join(currentDayDir, file));
+  }
+  console.log(`📁 Dag ${nextDay} skapad    → days/day${nextDay}/`);
 
   saveCurrentJson(nextDay, generated.map((b) => b.name));
 
