@@ -2,7 +2,7 @@ namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
 // TIPS: En stack är LIFO (Last In, First Out) - vilket element ska tas bort vid Pop?
-// Hitta och fixa buggen/buggarna i denna klass.
+// Hitta och fixa buggen/buggarna
 
 public class Stack<T>
 {
@@ -17,20 +17,7 @@ public class Stack<T>
 
     public T Pop()
     {
-        if (_items.Count == 0)
-            throw new InvalidOperationException("Stacken är tom.");
+      
 
-        T item = _items[0];             // BUG: ska vara _items[^1] (sista elementet)
-        _items.RemoveAt(0);             // BUG: ska ta bort sista elementet
-        return item;
-    }
-
-    public T Peek()
-    {
-        if (_items.Count == 0)
-            throw new InvalidOperationException("Stacken är tom.");
-        return _items[^1];
-    }
-
-    public bool IsEmpty => _items.Count == 0;
+    ;
 }

@@ -1,0 +1,12 @@
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Current\obj\Debug\net8.0\BugMachine.Current.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Current\obj\Debug\net8.0\BugMachine.Current.AssemblyInfoInputs.cache
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Current\obj\Debug\net8.0\BugMachine.Current.AssemblyInfo.cs
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Current\obj\Debug\net8.0\BugMachine.Current.csproj.CoreCompileInputs.cache
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Current\obj\Debug\net8.0\BugMachine.Current.sourcelink.json
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Current\bin\Debug\net8.0\BugMachine.Current.deps.json
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Current\bin\Debug\net8.0\BugMachine.Current.dll
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Current\bin\Debug\net8.0\BugMachine.Current.pdb
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Current\obj\Debug\net8.0\BugMachine.Current.dll
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Current\obj\Debug\net8.0\refint\BugMachine.Current.dll
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Current\obj\Debug\net8.0\BugMachine.Current.pdb
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Current\obj\Debug\net8.0\ref\BugMachine.Current.dll

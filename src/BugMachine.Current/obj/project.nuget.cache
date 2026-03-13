@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "pHlfNP1Miug=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\antep\\devops-projekt\\bugMachine\\src\\BugMachine.Current\\BugMachine.Current.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\antep\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.24\\microsoft.netcore.app.ref.8.0.24.nupkg.sha512",
+    "C:\\Users\\antep\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.24\\microsoft.windowsdesktop.app.ref.8.0.24.nupkg.sha512",
+    "C:\\Users\\antep\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.24\\microsoft.aspnetcore.app.ref.8.0.24.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,6 @@
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Tests\obj\Debug\net8.0\BugMachine.Tests.csproj.AssemblyReference.cache
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Tests\obj\Debug\net8.0\BugMachine.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Tests\obj\Debug\net8.0\BugMachine.Tests.AssemblyInfoInputs.cache
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Tests\obj\Debug\net8.0\BugMachine.Tests.AssemblyInfo.cs
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Tests\obj\Debug\net8.0\BugMachine.Tests.csproj.CoreCompileInputs.cache
+C:\Users\antep\devops-projekt\bugMachine\src\BugMachine.Tests\obj\Debug\net8.0\BugMachine.Tests.sourcelink.json

@@ -20,8 +20,9 @@ public class Queue<T>
         if (_items.Count == 0)
             throw new InvalidOperationException("Kön är tom.");
 
-        T item = _items.Last!.Value;   // BUG: ska ta från First (FIFO), inte Last
-        _items.RemoveLast();            // BUG: ska ta bort First
+        T[] array = _items.ToArray();
+        T item = array[0];   // BUG: ska ta från First (FIFO), inte Last. LÖST: Tar första elementet via ToArray().
+        _items.Remove(item); // BUG: ska ta bort First. LÖST: Använder Remove.
         return item;
     }
 
@@ -29,7 +30,8 @@ public class Queue<T>
     {
         if (_items.Count == 0)
             throw new InvalidOperationException("Kön är tom.");
-        return _items.First!.Value;
+            
+        return _items.ToArray()[0];
     }
 
     public bool IsEmpty => _items.Count == 0;
