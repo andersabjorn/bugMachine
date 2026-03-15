@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BugMachine.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dac91cc220579fca85d0fb4250d3dd4966654777")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92edfd219b49e8d27e6c0ca72aa71deb416926c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("BugMachine.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BugMachine.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
