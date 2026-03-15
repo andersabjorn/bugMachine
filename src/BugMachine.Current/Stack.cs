@@ -17,7 +17,7 @@ public class Stack<T>
 
     public T Pop()
     {
-      
+      foreach loop the singel piecs
 
     ;
 }

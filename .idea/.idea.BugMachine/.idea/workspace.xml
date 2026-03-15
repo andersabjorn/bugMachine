@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62e49a6c-5848-4c89-a10d-09fc12002c5a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BugMachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BugMachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/days/current.json" beforeDir="false" afterPath="$PROJECT_DIR$/days/current.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/AsyncAwaitBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/AsyncAwaitBug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/BinarySearch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/BinarySearch.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/BubbleSort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/BubbleSort.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/DictionaryBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/DictionaryBug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/LinkedList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/LinkedList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/LinqBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/LinqBug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/MergeSort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/MergeSort.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/MinHeap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/MinHeap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/NullReferenceBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/NullReferenceBug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/Queue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/Queue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/QuickSort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/QuickSort.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/RecursionBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/RecursionBug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/Stack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/Stack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/StringReverseBug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/StringReverseBug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BugMachine.Current/TreeTraversal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/BugMachine.Current/TreeTraversal.cs" afterDir="false" />
-    </list>
+    <list default="true" id="62e49a6c-5848-4c89-a10d-09fc12002c5a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,25 +24,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "feature/hard-bugs",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/hard-bugs&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="62e49a6c-5848-4c89-a10d-09fc12002c5a" name="Changes" comment="" />
@@ -73,6 +55,7 @@
       <workItem from="1771944681477" duration="1380000" />
       <workItem from="1772986253801" duration="1840000" />
       <workItem from="1773253714100" duration="1243000" />
+      <workItem from="1773422689784" duration="876000" />
     </task>
     <servers />
   </component>
