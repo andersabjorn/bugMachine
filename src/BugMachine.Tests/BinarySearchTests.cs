@@ -9,11 +9,9 @@ public class BinarySearchTests
         int[] arr = [1, 3, 5, 7, 9, 11, 13];
         Assert.Equal(3, BinarySearch.Search(arr, 7));
     }
-
+// added a feature
     [Fact]
-    public void Search_TargetAtStart_ReturnsZero()
-    {
-        int[] arr = [1, 3, 5, 7, 9];
+    publi
         Assert.Equal(0, BinarySearch.Search(arr, 1));
     }
 
