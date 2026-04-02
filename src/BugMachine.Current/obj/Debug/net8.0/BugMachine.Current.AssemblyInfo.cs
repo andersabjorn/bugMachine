@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BugMachine.Current")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92edfd219b49e8d27e6c0ca72aa71deb416926c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c19ec0703239db20b9ed4a772f7e071195afe467")]
 [assembly: System.Reflection.AssemblyProductAttribute("BugMachine.Current")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BugMachine.Current")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

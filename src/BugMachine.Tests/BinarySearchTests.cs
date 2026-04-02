@@ -5,7 +5,7 @@ public class BinarySearchTests
 {
     [Fact]
     public void Search_TargetInMiddle_ReturnsCorrectIndex()
-    {
+    { //Read through the bugs
         int[] arr = [1, 3, 5, 7, 9, 11, 13];
         Assert.Equal(3, BinarySearch.Search(arr, 7));
     }
