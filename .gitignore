@@ -1,0 +1,15 @@
+# .NET Build
+bin/
+obj/
+*.user
+.vs/
+
+# JetBrains
+.idea/
+
+# Node.js
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -52,6 +52,7 @@ function getNextDayNumber() {
 // Arkivera aktuell dag (om det finns filer)
 // ─────────────────────────────────────────────────────────────
 function archiveCurrentDay(dayNumber) {
+  if (!fs.existsSync(CURRENT_DIR)) return;
   const csFiles = fs
     .readdirSync(CURRENT_DIR)
     .filter((f) => f.endsWith(".cs"));
