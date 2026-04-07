@@ -4,8 +4,8 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
-const CURRENT_DIR = path.join(ROOT, "src", "BugMachine.Current");
-const DAYS_DIR = path.join(ROOT, "days");
+const SRC_DIR = path.join(ROOT, "src");
+const CSPROJ_PATH = path.join(SRC_DIR, "BugMachine.Current", "BugMachine.Current.csproj");
 
 // ─────────────────────────────────────────────────────────────
 // Ladda konfiguration och bugdefinitioner
@@ -15,13 +15,11 @@ const allBugs = require(path.join(__dirname, "bugs.js"));
 
 const selectedBugNames = new Set(config.bugs);
 
-// Skapa en lookup-map: name → bug definition
 const bugMap = {};
 for (const bug of allBugs) {
   bugMap[bug.name] = bug;
 }
 
-// Validera konfigurationen
 for (const name of selectedBugNames) {
   if (!bugMap[name]) {
     console.error(`❌ Okänd bugg i bugs.config.js: "${name}"`);
@@ -31,27 +29,10 @@ for (const name of selectedBugNames) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// Beräkna nästa dag-nummer
+// Beräkna nästa dag-nummer (läs src/day* mappar, likt kata-machine)
 // ─────────────────────────────────────────────────────────────
 function getNextDayNumber() {
-  if (!fs.existsSync(DAYS_DIR)) {
-    fs.mkdirSync(DAYS_DIR, { recursive: true });
-    return 1;
-  }
-
-  const currentJsonPath = path.join(DAYS_DIR, "current.json");
-  if (fs.existsSync(currentJsonPath)) {
-    try {
-      const data = JSON.parse(fs.readFileSync(currentJsonPath, "utf8"));
-      if (typeof data.day === "number" && data.day >= 1) {
-        return data.day + 1;
-      }
-    } catch (_) {
-      // fall through to directory-based calculation
-    }
-  }
-
-  const entries = fs.readdirSync(DAYS_DIR);
+  const entries = fs.readdirSync(SRC_DIR);
   const dayNumbers = entries
     .filter((e) => /^day\d+$/.test(e))
     .map((e) => parseInt(e.replace("day", ""), 10))
@@ -61,47 +42,17 @@ function getNextDayNumber() {
 }
 
 // ─────────────────────────────────────────────────────────────
-// Arkivera aktuell dag (om det finns filer)
-// ─────────────────────────────────────────────────────────────
-function archiveCurrentDay(dayNumber) {
-  const csFiles = fs
-    .readdirSync(CURRENT_DIR)
-    .filter((f) => f.endsWith(".cs"));
-
-  if (csFiles.length === 0) return; // Inget att arkivera
-
-  const archiveDir = path.join(DAYS_DIR, `day${dayNumber - 1}`);
-  fs.mkdirSync(archiveDir, { recursive: true });
-
-  for (const file of csFiles) {
-    const src = path.join(CURRENT_DIR, file);
-    const dst = path.join(archiveDir, file);
-    fs.copyFileSync(src, dst);
-  }
-  console.log(`📁 Dag ${dayNumber - 1} arkiverad → days/day${dayNumber - 1}/`);
-}
-
-// ─────────────────────────────────────────────────────────────
-// Rensa Current-mappen på .cs-filer
-// ─────────────────────────────────────────────────────────────
-function clearCurrentDir() {
-  const csFiles = fs
-    .readdirSync(CURRENT_DIR)
-    .filter((f) => f.endsWith(".cs"));
-  for (const file of csFiles) {
-    fs.unlinkSync(path.join(CURRENT_DIR, file));
-  }
-}
-
-// ─────────────────────────────────────────────────────────────
-// Generera filer för alla buggar
+// Generera filer direkt i src/dayN/ (likt kata-machine)
 // ─────────────────────────────────────────────────────────────
 function generateDay(dayNumber) {
+  const dayDir = path.join(SRC_DIR, `day${dayNumber}`);
+  fs.mkdirSync(dayDir, { recursive: true });
+
   const generated = [];
   const skipped = [];
 
   for (const bug of allBugs) {
-    const filePath = path.join(CURRENT_DIR, `${bug.name}.cs`);
+    const filePath = path.join(dayDir, `${bug.name}.cs`);
     const isSelected = selectedBugNames.has(bug.name);
     const code = isSelected ? bug.buggyCode : bug.stubCode;
 
@@ -118,19 +69,23 @@ function generateDay(dayNumber) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// Spara current.json för spårning
+// Uppdatera BugMachine.Current.csproj att peka på src/dayN/
+// (likt kata-machine's align-configs.js som uppdaterar jest/tsconfig)
 // ─────────────────────────────────────────────────────────────
-function saveCurrentJson(dayNumber, bugNames) {
-  const data = {
-    day: dayNumber,
-    generatedAt: new Date().toISOString(),
-    bugs: bugNames,
-  };
-  fs.writeFileSync(
-    path.join(DAYS_DIR, "current.json"),
-    JSON.stringify(data, null, 2),
-    "utf8"
-  );
+function updateCsproj(dayNumber) {
+  const content = `<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../day${dayNumber}/**/*.cs" />
+  </ItemGroup>
+</Project>
+`;
+  fs.writeFileSync(CSPROJ_PATH, content, "utf8");
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -143,7 +98,7 @@ function printSummary(dayNumber, generated) {
   console.log("\n╔══════════════════════════════════════════════════╗");
   console.log(`║  🐛  BUG MACHINE  —  Dag ${String(dayNumber).padEnd(22)}║`);
   console.log("╚══════════════════════════════════════════════════╝\n");
-  console.log(`  ${generated.length} buggar genererade i src/BugMachine.Current/\n`);
+  console.log(`  ${generated.length} buggar genererade i src/day${dayNumber}/\n`);
 
   for (const bug of generated) {
     const icon = diffColors[bug.difficulty] ?? "⚪";
@@ -163,30 +118,13 @@ function printSummary(dayNumber, generated) {
 // Huvudflöde
 // ─────────────────────────────────────────────────────────────
 try {
-  if (!fs.existsSync(CURRENT_DIR)) {
-    fs.mkdirSync(CURRENT_DIR, { recursive: true });
-  }
-
   const nextDay = getNextDayNumber();
-
-  if (nextDay > 1) {
-    archiveCurrentDay(nextDay);
-  }
-
-  clearCurrentDir();
 
   const { generated, skipped } = generateDay(nextDay);
 
-  // Skapa en mapp för den aktuella dagen (likt kata-machine)
-  const currentDayDir = path.join(DAYS_DIR, `day${nextDay}`);
-  fs.mkdirSync(currentDayDir, { recursive: true });
-  const csFiles = fs.readdirSync(CURRENT_DIR).filter((f) => f.endsWith(".cs"));
-  for (const file of csFiles) {
-    fs.copyFileSync(path.join(CURRENT_DIR, file), path.join(currentDayDir, file));
-  }
-  console.log(`📁 Dag ${nextDay} skapad    → days/day${nextDay}/`);
+  updateCsproj(nextDay);
 
-  saveCurrentJson(nextDay, generated.map((b) => b.name));
+  console.log(`📁 Dag ${nextDay} skapad → src/day${nextDay}/`);
 
   printSummary(nextDay, generated);
 
