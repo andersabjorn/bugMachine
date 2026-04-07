@@ -9,5 +9,13 @@
     "test:quiet": "dotnet test src/BugMachine.Tests/"
   },
   "keywords": ["csharp", "dotnet", "bugs", "learning", "practice"],
-  "license": "MIT"
+  "license": "MIT",
+  "author": "Anders Abjörn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andersabjorn/bugMachine.git"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }
