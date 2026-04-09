@@ -12,6 +12,7 @@
   },
   "keywords": ["csharp", "dotnet", "bugs", "learning", "practice"],
   "license": "MIT",
+  "private": true,
   "author": "Anders Abjörn",
   "repository": {
     "type": "git",
