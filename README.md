@@ -29,7 +29,7 @@ cd bugMachine
 npm run generate
 ```
 
-Detta skapar buggiga C#-filer i `src/BugMachine.Current/`. Du ser direkt vilka buggar du ska lösa och deras svårighetsgrad.
+Detta skapar en ny mapp `src/dayN/` med buggiga C#-filer. Du ser direkt vilka buggar du ska lösa och deras svårighetsgrad.
 
 ### 2. Kör testerna
 
@@ -37,11 +37,11 @@ Detta skapar buggiga C#-filer i `src/BugMachine.Current/`. Du ser direkt vilka b
 npm run test
 ```
 
-Alla tester misslyckas från start — det är meningen! Din uppgift är att fixa buggarna i `src/BugMachine.Current/` tills alla tester är gröna.
+Alla tester misslyckas från start — det är meningen! Din uppgift är att fixa buggarna i `src/dayN/` tills alla tester är gröna.
 
 ### 3. Fixa buggarna
 
-Öppna filerna i `src/BugMachine.Current/` i din favorit-editor (t.ex. Visual Studio, Rider, eller VS Code med C#-tillägg).
+Öppna filerna i `src/dayN/` i din favorit-editor (t.ex. Visual Studio, Rider, eller VS Code med C#-tillägg).
 
 Varje fil innehåller:
 - En kommentar med svårighetsgrad
@@ -62,7 +62,7 @@ Grön = du hittat och fixat buggen! 🎉
 npm run generate
 ```
 
-Gårdagens filer arkiveras automatiskt i `days/dayN/` och du får en ny uppsättning buggar.
+Varje dag sparas i sin egna mapp `src/dayN/` och du får en ny uppsättning buggar.
 
 ---
 
@@ -70,7 +70,7 @@ Gårdagens filer arkiveras automatiskt i `days/dayN/` och du får en ny uppsätt
 
 | Kommando | Beskrivning |
 |---------|-------------|
-| `npm run generate` | Generera nya buggiga filer (arkiverar förra dagen) |
+| `npm run generate` | Generera nya buggiga filer i `src/dayN/` |
 | `npm run test` | Kör alla xUnit-tester mot aktuella filer |
 | `npm run test:quiet` | Kör tester med minimal output |
 | `npm run clear` | Rensa alla genererade filer och börja om |
@@ -140,17 +140,16 @@ bug-machine/
 │   ├── generate.js             # Genererar dagens buggar
 │   ├── bugs.js                 # Alla buggdefinitioner (mallar)
 │   └── clear.js                # Rensar genererade filer
-├── src/
-│   ├── BugMachine.Current/     # ← Här redigerar du! (genereras om varje dag)
-│   │   ├── BugMachine.Current.csproj
-│   │   └── *.cs               # Buggiga C#-filer
-│   └── BugMachine.Tests/       # ← Rör inte detta! (statiska tester)
-│       ├── BugMachine.Tests.csproj
-│       └── *Tests.cs          # xUnit-tester
-└── days/                       # Arkiv av gamla dagar
-    ├── current.json            # Info om aktuell dag
-    ├── day1/
-    └── day2/
+└── src/
+    ├── BugMachine.Current/     # Pekar alltid på senaste dagen (via csproj)
+    │   └── BugMachine.Current.csproj
+    ├── BugMachine.Tests/       # ← Rör inte detta! (statiska tester)
+    │   ├── BugMachine.Tests.csproj
+    │   └── *Tests.cs           # xUnit-tester
+    ├── day1/                   # Äldre genererade dagar
+    ├── day2/
+    └── dayN/                   # ← Här redigerar du! (senast genererade)
+        └── *.cs                # Buggiga C#-filer
 ```
 
 ---
