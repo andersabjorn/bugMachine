@@ -181,6 +181,9 @@ bug-machine/
   stubCode: `namespace BugMachine.Current;
 // ... Korrekt kod som stub (används när buggen inte är vald idag)
 `,
+  correctCode: `namespace BugMachine.Current;
+// ... Referenslösning (används inte automatiskt, men dokumenterar rätt svar)
+`,
 }
 ```
 
