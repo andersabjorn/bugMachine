@@ -58,11 +58,7 @@ public class MinHeap
         {
             int left = 2 * i + 1;
             int right = 2 * i + 2;
-            // BUG: väljer alltid vänster barn utan att kontrollera om höger är mindre
             int smallest = left;
-
-            // Ska kontrollera höger barn också:
-            // if (right < n && _data[right] < _data[smallest]) smallest = right;
 
             if (left >= n || _data[i] <= _data[smallest]) break;
 

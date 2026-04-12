@@ -20,8 +20,8 @@ public class Stack<T>
         if (_items.Count == 0)
             throw new InvalidOperationException("Stacken är tom.");
 
-        T item = _items[0];             // BUG: ska vara _items[^1] (sista elementet)
-        _items.RemoveAt(0);             // BUG: ska ta bort sista elementet
+        T item = _items[0];
+        _items.RemoveAt(0);
         return item;
     }
 

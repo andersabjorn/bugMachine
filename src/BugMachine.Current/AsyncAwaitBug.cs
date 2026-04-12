@@ -11,8 +11,8 @@ public class AsyncAwaitBug
     public async Task<string> GetData()
     {
         var task = FetchDataAsync();
-        task.Wait();           // BUG: .Wait() blockerar tråden - ska vara: await task
-        return task.Result;    // BUG: .Result efter Wait() - ska vara: return await task
+        task.Wait();
+        return task.Result;
     }
 
     /// <summary>Hämtar och bearbetar flera datakällor parallellt.</summary>
@@ -21,7 +21,6 @@ public class AsyncAwaitBug
         var results = new List<string>();
         foreach (var url in urls)
         {
-            // BUG: väntar sekventiellt med .Result istället för parallellt med Task.WhenAll
             results.Add(SimulateHttpCallAsync(url).Result);
         }
         return results;

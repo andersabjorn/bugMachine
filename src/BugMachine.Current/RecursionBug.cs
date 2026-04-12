@@ -10,7 +10,6 @@ public static class RecursionBug
     public static long Fibonacci(int n)
     {
         if (n <= 0) return 0;
-        // BUG: saknar basfall för n == 1, orsakar oändlig rekursion → StackOverflow
         return Fibonacci(n - 1) + Fibonacci(n - 2);
     }
 

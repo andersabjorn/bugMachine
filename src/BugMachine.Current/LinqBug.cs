@@ -9,7 +9,6 @@ public static class LinqBug
     /// <summary>Returnerar det första jämna talet, eller null om inget finns.</summary>
     public static int? FindFirstEven(IEnumerable<int> numbers)
     {
-        // BUG: .First() kastar InvalidOperationException om inga jämna tal finns
         return numbers.First(n => n % 2 == 0);
     }
 
@@ -22,7 +21,6 @@ public static class LinqBug
     /// <summary>Returnerar det största elementet, eller null för tom sekvens.</summary>
     public static int? MaxOrNull(IEnumerable<int> numbers)
     {
-        // BUG: .Max() kastar InvalidOperationException för tom sekvens
         return numbers.Max();
     }
 }

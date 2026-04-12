@@ -10,7 +10,7 @@ public static class BinarySearch
     public static int Search(int[] sortedArr, int target)
     {
         int low = 0;
-        int high = sortedArr.Length;   // BUG: ska vara Length - 1
+        int high = sortedArr.Length;
 
         while (low <= high)
         {

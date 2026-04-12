@@ -20,8 +20,8 @@ public class Queue<T>
         if (_items.Count == 0)
             throw new InvalidOperationException("Kön är tom.");
 
-        T item = _items.Last!.Value;   // BUG: ska ta från First (FIFO), inte Last
-        _items.RemoveLast();            // BUG: ska ta bort First
+        T item = _items.Last!.Value;
+        _items.RemoveLast();
         return item;
     }
 
