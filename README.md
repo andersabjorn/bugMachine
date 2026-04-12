@@ -51,12 +51,22 @@ Varje fil innehåller:
 ### 4. Verifiera lösningen
 
 ```bash
-npm run test
+npm run status
 ```
 
-Grön = du hittat och fixat buggen! 🎉
+Visar vilka buggar du löst och hur många tester som är gröna. Du kan också köra `npm run test` för full xUnit-output.
 
-### 5. Nästa dag — nya buggar
+### 5. Committa dina lösningar
+
+```bash
+git add src/BugMachine.Current/
+git commit -m "Dag X – löste BubbleSort, Stack, Queue"
+git push
+```
+
+Detta sparar ditt arbete och ger dig en grön prick på GitHub! 🟩
+
+### 6. Nästa dag — nya buggar
 
 ```bash
 npm run generate
