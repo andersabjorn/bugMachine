@@ -67,6 +67,12 @@ function archiveCurrentDay(dayNumber) {
     const dst = path.join(archiveDir, file);
     fs.copyFileSync(src, dst);
   }
+  // Spara en progress-snapshot om status körts för dagen
+  const currentJsonSrc = path.join(DAYS_DIR, "current.json");
+  if (fs.existsSync(currentJsonSrc)) {
+    fs.copyFileSync(currentJsonSrc, path.join(archiveDir, "progress.json"));
+  }
+
   console.log(`📁 Dag ${dayNumber - 1} arkiverad → days/day${dayNumber - 1}/`);
 }
 

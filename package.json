@@ -6,7 +6,8 @@
     "generate": "node ./scripts/generate.js",
     "clear": "node ./scripts/clear.js",
     "test": "dotnet test src/BugMachine.Tests/ --logger \"console;verbosity=normal\"",
-    "test:quiet": "dotnet test src/BugMachine.Tests/"
+    "test:quiet": "dotnet test src/BugMachine.Tests/",
+    "status": "node ./scripts/status.js"
   },
   "keywords": ["csharp", "dotnet", "bugs", "learning", "practice"],
   "license": "MIT",
