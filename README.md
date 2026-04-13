@@ -137,6 +137,12 @@ Kör sedan `npm run generate` för att se effekten.
 | `AsyncAwaitBug` | C# Async | `.Result` på async metod → potentiell deadlock |
 | `MinHeap` | Datastrukturer | HeapifyDown kontrollerar aldrig höger barn |
 
+### 🔴 Svår
+| Namn | Kategori | Vad är buggen? |
+|------|---------|----------------|
+| `ClosureBug` | Lambdas | Lambda fångar loop-variabel by reference istället för by value |
+| `LruCache` | Datastrukturer | `Get()` uppdaterar inte recency-ordningen vid cache-träff |
+
 ---
 
 ## Filstruktur

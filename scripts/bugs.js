@@ -1201,6 +1201,154 @@ public class MinHeap
 `,
     correctCode: `// Same as stub - add right-child comparison in HeapifyDown`,
   },
+
+  // ─────────────────────────────────────────────
+  // HARD BUGS
+  // ─────────────────────────────────────────────
+
+  {
+    name: "ClosureBug",
+    difficulty: "hard",
+    topic: "lambdas",
+    hint: "Tänk på vad som faktiskt fångas i en lambda - variabeln eller dess värde?",
+    buggyCode: `namespace BugMachine.Current;
+
+// SVÅRIGHET: Svår
+// TIPS: Tänk på vad som faktiskt fångas i en lambda - variabeln eller dess värde?
+// Hitta och fixa buggen/buggarna i denna klass.
+
+public static class ClosureBug
+{
+    /// <summary>Skapar en lista med funktioner som var och en ska returnera sitt index (0, 1, 2 ...).</summary>
+    public static List<Func<int>> CreateCounters(int count)
+    {
+        var counters = new List<Func<int>>();
+        for (int i = 0; i < count; i++)
+        {
+            counters.Add(() => i);
+        }
+        return counters;
+    }
+
+    /// <summary>Async-version: varje funktion ska returnera sitt index som en Task.</summary>
+    public static List<Func<Task<int>>> CreateAsyncCounters(int count)
+    {
+        var counters = new List<Func<Task<int>>>();
+        for (int i = 0; i < count; i++)
+        {
+            counters.Add(() => Task.FromResult(i));
+        }
+        return counters;
+    }
+}
+`,
+    stubCode: `namespace BugMachine.Current;
+
+public static class ClosureBug
+{
+    public static List<Func<int>> CreateCounters(int count)
+    {
+        var counters = new List<Func<int>>();
+        for (int i = 0; i < count; i++) { int c = i; counters.Add(() => c); }
+        return counters;
+    }
+    public static List<Func<Task<int>>> CreateAsyncCounters(int count)
+    {
+        var counters = new List<Func<Task<int>>>();
+        for (int i = 0; i < count; i++) { int c = i; counters.Add(() => Task.FromResult(c)); }
+        return counters;
+    }
+}
+`,
+    correctCode: `// FIXAD: Introducera int captured = i; inuti loopen och fånga captured istället för i`,
+  },
+
+  {
+    name: "LruCache",
+    difficulty: "hard",
+    topic: "datastrukturer",
+    hint: "Vid ett cache-träff - räcker det att returnera värdet, eller behöver något uppdateras?",
+    buggyCode: `namespace BugMachine.Current;
+
+// SVÅRIGHET: Svår
+// TIPS: Vid ett cache-träff - räcker det att returnera värdet, eller behöver något uppdateras?
+// Hitta och fixa buggen/buggarna i denna klass.
+
+public class LruCache
+{
+    private readonly int _capacity;
+    private readonly Dictionary<int, LinkedListNode<(int Key, int Value)>> _map;
+    private readonly LinkedList<(int Key, int Value)> _list;
+
+    public LruCache(int capacity)
+    {
+        _capacity = capacity;
+        _map = new Dictionary<int, LinkedListNode<(int, int)>>();
+        _list = new LinkedList<(int, int)>();
+    }
+
+    /// <summary>Returnerar det cachade värdet för nyckeln, eller -1 om den inte finns.</summary>
+    public int Get(int key)
+    {
+        if (!_map.TryGetValue(key, out var node))
+            return -1;
+
+        return node.Value.Value;
+    }
+
+    /// <summary>Sätter ett värde i cachen. Kastar ut det minst nyligen använda elementet om cachen är full.</summary>
+    public void Put(int key, int value)
+    {
+        if (_map.TryGetValue(key, out var existing))
+        {
+            _list.Remove(existing);
+            _map.Remove(key);
+        }
+
+        var newNode = _list.AddFirst((key, value));
+        _map[key] = newNode;
+
+        if (_list.Count > _capacity)
+        {
+            var lru = _list.Last!;
+            _map.Remove(lru.Value.Key);
+            _list.RemoveLast();
+        }
+    }
+}
+`,
+    stubCode: `namespace BugMachine.Current;
+
+public class LruCache
+{
+    private readonly int _capacity;
+    private readonly Dictionary<int, LinkedListNode<(int Key, int Value)>> _map;
+    private readonly LinkedList<(int Key, int Value)> _list;
+    public LruCache(int capacity)
+    {
+        _capacity = capacity;
+        _map = new Dictionary<int, LinkedListNode<(int, int)>>();
+        _list = new LinkedList<(int, int)>();
+    }
+    public int Get(int key)
+    {
+        if (!_map.TryGetValue(key, out var node)) return -1;
+        _list.Remove(node);
+        var newNode = _list.AddFirst(node.Value);
+        _map[key] = newNode;
+        return newNode.Value.Value;
+    }
+    public void Put(int key, int value)
+    {
+        if (_map.TryGetValue(key, out var existing)) { _list.Remove(existing); _map.Remove(key); }
+        var newNode = _list.AddFirst((key, value));
+        _map[key] = newNode;
+        if (_list.Count > _capacity) { var lru = _list.Last!; _map.Remove(lru.Value.Key); _list.RemoveLast(); }
+    }
+}
+`,
+    correctCode: `// FIXAD: Get() flyttar noden till listans framsida för att uppdatera recency`,
+  },
 ];
 
 module.exports = bugs;

@@ -29,5 +29,7 @@ module.exports = {
     "TreeTraversal",
     "AsyncAwaitBug",
     "MinHeap",
+    "ClosureBug",
+    "LruCache",
   ],
 };
