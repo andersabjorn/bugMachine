@@ -11,6 +11,7 @@
 //           LinqBug, NullReferenceBug, DictionaryBug, StringReverseBug
 //   MEDEL:  LinkedList, MergeSort, QuickSort, TreeTraversal,
 //           AsyncAwaitBug, MinHeap
+//   SVÅR:   ClosureBug, LruCache
 
 module.exports = {
   bugs: [
