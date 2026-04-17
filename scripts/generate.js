@@ -15,6 +15,13 @@ const allBugs = require(path.join(__dirname, "bugs.js"));
 
 const selectedBugNames = new Set(config.bugs);
 
+if (selectedBugNames.size === 0) {
+  console.error("❌ Inga buggar valda i bugs.config.js.");
+  console.error('   Lägg till minst en bugg, t.ex: bugs: ["BubbleSort"]');
+  console.error("   Kör 'npm run list' för att se tillgängliga buggar.");
+  process.exit(1);
+}
+
 const bugMap = {};
 for (const bug of allBugs) {
   bugMap[bug.name] = bug;
