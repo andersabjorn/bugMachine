@@ -83,7 +83,9 @@ Gårdagens filer arkiveras automatiskt i `days/dayN/` och du får en ny uppsätt
 | `npm run generate` | Generera nya buggiga filer (arkiverar förra dagen) |
 | `npm run test` | Kör alla xUnit-tester mot aktuella filer |
 | `npm run test:quiet` | Kör tester med minimal output |
+| `npm run status` | Visa vilka buggar du löst och hur många tester som är gröna |
 | `npm run clear` | Rensa alla genererade filer och börja om |
+| `npm run history` | Visa historik över tidigare dagar |
 
 Du kan också köra testerna direkt med dotnet:
 ```bash
