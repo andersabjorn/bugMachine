@@ -109,9 +109,9 @@ const streak = calcStreak(archivedDays, current);
 
 let totalSolved = 0;
 let totalBugs = 0;
-const allDaysForTotal = (current && current.results)
+const allDaysForTotal = current && current.results
   ? [...archivedDays, current]
-  : archivedDays;
+  : [...archivedDays];
 for (const day of allDaysForTotal) {
   if (day.results) {
     totalSolved += Object.values(day.results).filter((r) => r.solved).length;
