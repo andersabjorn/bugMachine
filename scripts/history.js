@@ -30,10 +30,11 @@ function readArchivedDays() {
 // ─────────────────────────────────────────────────────────────
 // Beräkna streak (bakåt från senaste arkiverade dag)
 // ─────────────────────────────────────────────────────────────
-function calcStreak(archivedDays) {
+function calcStreak(archivedDays, currentDay) {
+  const allDays = currentDay ? [...archivedDays, currentDay] : archivedDays;
   let streak = 0;
-  for (let i = archivedDays.length - 1; i >= 0; i--) {
-    const d = archivedDays[i];
+  for (let i = allDays.length - 1; i >= 0; i--) {
+    const d = allDays[i];
     if (!d.results) break;
     const solved = Object.values(d.results).filter((r) => r.solved).length;
     if (solved === 0) break;
@@ -104,11 +105,14 @@ if (current) {
 }
 
 // Sammanfattning
-const streak = calcStreak(archivedDays);
+const streak = calcStreak(archivedDays, current);
 
 let totalSolved = 0;
 let totalBugs = 0;
-for (const day of archivedDays) {
+const allDaysForTotal = current && current.results
+  ? [...archivedDays, current]
+  : archivedDays;
+for (const day of allDaysForTotal) {
   if (day.results) {
     totalSolved += Object.values(day.results).filter((r) => r.solved).length;
     totalBugs += day.bugs ? day.bugs.length : Object.keys(day.results).length;
