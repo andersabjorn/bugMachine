@@ -45,4 +45,4 @@ function clearDays() {
 console.log("\n🧹 Rensar Bug Machine...\n");
 clearCurrentDir();
 clearDays();
-console.log("\n✅ Klart! Kör 'npm run generate' för att börja om.\n");
+console.log("\n✅ Klart! Kör 'npm run generate' för att starta en ny dag.\n");
