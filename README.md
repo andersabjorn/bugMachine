@@ -9,7 +9,7 @@ Istället för att implementera tomma funktioner får du **kod med inbyggda bugg
 ## Kom igång
 
 ### Krav
-- [Node.js](https://nodejs.org/) (för generatorn)
+- [Node.js](https://nodejs.org/) 18 eller senare (för generatorn)
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 
 ### Installation
