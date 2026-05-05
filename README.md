@@ -157,6 +157,8 @@ bug-machine/
 ├── scripts/
 │   ├── generate.js             # Genererar dagens buggar
 │   ├── bugs.js                 # Alla buggdefinitioner (mallar)
+│   ├── status.js               # Visar progress för aktuell dag
+│   ├── history.js              # Visar historik och streak
 │   └── clear.js                # Rensar genererade filer
 ├── src/
 │   ├── BugMachine.Current/     # ← Här redigerar du! (genereras om varje dag)
