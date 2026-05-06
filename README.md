@@ -182,6 +182,7 @@ bug-machine/
 3. **Tänk på edge cases** — tomma arrayer, null-värden, enkla element
 4. **Kör ofta** — fixa en sak i taget och se om testerna förbättras
 5. **Debugga** — använd Visual Studio eller VS Code debugger för att stega igenom koden
+6. **Följ din streak** — kör `npm run history` för att se din totala progress
 
 ---
 
