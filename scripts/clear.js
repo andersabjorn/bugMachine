@@ -39,6 +39,11 @@ function clearDays() {
     fs.unlinkSync(currentJson);
   }
 
+  const trxFile = path.join(DAYS_DIR, "test-results.trx");
+  if (fs.existsSync(trxFile)) {
+    fs.unlinkSync(trxFile);
+  }
+
   console.log(`🗑️  Raderade ${removed} dag-mappar från days/`);
 }
 
