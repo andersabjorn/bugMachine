@@ -72,7 +72,7 @@ Detta sparar ditt arbete och ger dig en grön prick på GitHub! 🟩
 npm run generate
 ```
 
-Gårdagens filer arkiveras automatiskt i `days/dayN/` och du får en ny uppsättning buggar.
+Gårdagens filer arkiveras automatiskt i `days/dayN/` och du får en ny uppsättning buggar. Kör `npm run history` för att se din totala progress och streak.
 
 ---
 
