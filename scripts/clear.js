@@ -44,7 +44,9 @@ function clearDays() {
     fs.unlinkSync(trxFile);
   }
 
-  console.log(`🗑️  Raderade ${removed} dag-mappar från days/`);
+  if (removed > 0) {
+    console.log(`🗑️  Raderade ${removed} dag-mappar från days/`);
+  }
 }
 
 console.log("\n🧹 Rensar Bug Machine...\n");
