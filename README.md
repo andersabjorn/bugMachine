@@ -208,7 +208,7 @@ bug-machine/
 }
 ```
 
-2. Lägg till namn i `bugs.config.js`
+2. Lägg till namnet i `bugs`-arrayen i `bugs.config.js`
 
 3. Skapa en testfil `src/BugMachine.Tests/MinBuggTests.cs`
 
