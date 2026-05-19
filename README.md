@@ -9,6 +9,7 @@ Istället för att implementera tomma funktioner får du **kod med inbyggda bugg
 ## Kom igång
 
 ### Krav
+- [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/) 18 eller senare (för generatorn)
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 
@@ -208,7 +209,7 @@ bug-machine/
 }
 ```
 
-2. Lägg till namn i `bugs.config.js`
+2. Lägg till namnet i `bugs`-arrayen i `bugs.config.js`
 
 3. Skapa en testfil `src/BugMachine.Tests/MinBuggTests.cs`
 
