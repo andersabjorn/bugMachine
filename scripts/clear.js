@@ -18,7 +18,9 @@ function clearCurrentDir() {
   for (const file of csFiles) {
     fs.unlinkSync(path.join(CURRENT_DIR, file));
   }
-  console.log(`🗑️  Rensade ${csFiles.length} filer från src/BugMachine.Current/`);
+  if (csFiles.length > 0) {
+    console.log(`🗑️  Rensade ${csFiles.length} filer från src/BugMachine.Current/`);
+  }
 }
 
 function clearDays() {
