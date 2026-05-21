@@ -22,12 +22,13 @@ for (const bug of allBugs) {
 }
 
 // Validera konfigurationen
-for (const name of selectedBugNames) {
-  if (!bugMap[name]) {
+const unknownBugs = [...selectedBugNames].filter((name) => !bugMap[name]);
+if (unknownBugs.length > 0) {
+  for (const name of unknownBugs) {
     console.error(`❌ Okänd bugg i bugs.config.js: "${name}"`);
-    console.error(`   Tillgängliga buggar: ${allBugs.map((b) => b.name).join(", ")}`);
-    process.exit(1);
   }
+  console.error(`   Tillgängliga buggar: ${allBugs.map((b) => b.name).join(", ")}`);
+  process.exit(1);
 }
 
 // ─────────────────────────────────────────────────────────────
