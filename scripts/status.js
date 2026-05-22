@@ -123,8 +123,9 @@ for (const bug of bugResults) {
   if (bug.solved) byDiff[bug.difficulty].solved++;
 }
 
-const diffSummary = Object.entries(byDiff)
-  .map(([d, s]) => `${diffLabels[d] ?? d}: ${s.solved}/${s.total}`)
+const diffSummary = ["easy", "medium", "hard"]
+  .filter((d) => byDiff[d])
+  .map((d) => `${diffLabels[d]}: ${byDiff[d].solved}/${byDiff[d].total}`)
   .join("   ");
 
 console.log("\n──────────────────────────────────────────────────");
