@@ -179,7 +179,7 @@ try {
   printSummary(nextDay, generated);
 
   if (skipped.length > 0) {
-    console.log(`  (${skipped.length} buggar inte valda idag - stubs genererade)\n`);
+    console.log(`  (${skipped.length} buggar inte valda idag — stubs genererade)\n`);
   }
 } catch (err) {
   console.error("❌ Fel vid generering:", err.message);
