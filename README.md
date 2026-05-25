@@ -97,7 +97,7 @@ dotnet test src/BugMachine.Tests/
 
 ## Konfigurera vilka buggar du vill träna på
 
-Redigera `bugs.config.js` för att välja vilka buggar som ingår:
+Redigera `bugs.config.js` för att välja vilka buggar som ingår. Alla buggar är aktiverade som standard — ta bort rader för att fokusera på specifika kategorier.
 
 ```javascript
 module.exports = {
