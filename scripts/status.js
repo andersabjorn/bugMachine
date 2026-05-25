@@ -95,7 +95,10 @@ const bugResults = current.bugs.map((name) => {
 // ─────────────────────────────────────────────────────────────
 const dayStr = String(current.day).padEnd(20);
 const now = new Date();
-const checkedAtDisplay = now.toLocaleString("sv-SE", { hour: "2-digit", minute: "2-digit", year: "numeric", month: "2-digit", day: "2-digit" });
+const checkedAtDisplay = now.toLocaleString("sv-SE", {
+  year: "numeric", month: "2-digit", day: "2-digit",
+  hour: "2-digit", minute: "2-digit",
+});
 
 console.log("\n╔══════════════════════════════════════════════════╗");
 console.log(`║  🐛  BUG MACHINE  —  Status  Dag ${dayStr}║`);
