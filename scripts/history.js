@@ -16,7 +16,7 @@ function readArchivedDays() {
   return fs
     .readdirSync(DAYS_DIR)
     .filter((e) => /^day\d+$/.test(e))
-    .map((e) => parseInt(e.replace("day", ""), 10))
+    .map((e) => parseInt(e.slice(3), 10))
     .sort((a, b) => a - b)
     .map((n) => {
       const progressPath = path.join(DAYS_DIR, `day${n}`, "progress.json");
