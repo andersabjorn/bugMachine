@@ -181,7 +181,7 @@ bug-machine/
 1. **Läs felet noga** — xUnit ger dig exakt vilket test som misslyckas och varför
 2. **Läs TIPS-kommentaren** i filen — den ger en ledtråd utan att avslöja svaret
 3. **Tänk på edge cases** — tomma arrayer, null-värden, enkla element
-4. **Kör ofta** — fixa en sak i taget och se om testerna förbättras
+4. **Kör ofta** — använd `npm run test:quiet` för snabb feedback, en sak i taget
 5. **Debugga** — använd Visual Studio eller VS Code debugger för att stega igenom koden
 6. **Följ din streak** — kör `npm run history` för att se din totala progress
 
