@@ -100,6 +100,8 @@ const checkedAtDisplay = now.toLocaleString("sv-SE", {
   hour: "2-digit", minute: "2-digit",
 });
 
+const DIVIDER = "──────────────────────────────────────────────────";
+
 console.log("\n╔══════════════════════════════════════════════════╗");
 console.log(`║  🐛  BUG MACHINE  —  Status  Dag ${dayStr}║`);
 console.log("╚══════════════════════════════════════════════════╝\n");
@@ -131,9 +133,9 @@ const diffSummary = ["easy", "medium", "hard"]
   .map((d) => `${diffLabels[d]}: ${byDiff[d].solved}/${byDiff[d].total}`)
   .join("   ");
 
-console.log("\n──────────────────────────────────────────────────");
+console.log(`\n${DIVIDER}`);
 console.log(`  Lösta: ${solved} / ${total}   |   ${diffSummary}`);
-console.log("──────────────────────────────────────────────────\n");
+console.log(`${DIVIDER}\n`);
 
 // ─────────────────────────────────────────────────────────────
 // Spara tillbaka till current.json
