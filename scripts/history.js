@@ -120,7 +120,11 @@ for (const day of allDaysForTotal) {
 }
 
 const streakStr = streak === 1 ? "1 dag" : `${streak} dagar`;
-const streakLabel = streak > 0 ? `Streak: ${streakStr}` : "Ingen aktiv streak";
+const streakLabel = streak > 0
+  ? `Streak: ${streakStr}`
+  : archivedDays.length > 0
+    ? "Ingen aktiv streak — lös en bugg idag för att starta en ny!"
+    : "Ingen streak ännu";
 
 console.log("\n──────────────────────────────────────────────────");
 if (totalBugs > 0) {
