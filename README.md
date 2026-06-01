@@ -152,6 +152,7 @@ Kör sedan `npm run generate` för att se effekten.
 
 ```
 bug-machine/
+├── .gitignore
 ├── bugs.config.js              # Konfigurera vilka buggar du tränar på
 ├── package.json                # npm-scripts
 ├── BugMachine.sln              # .NET Solution-fil
