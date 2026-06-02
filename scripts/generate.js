@@ -154,6 +154,7 @@ function printSummary(dayNumber, generated) {
   console.log("  Kör testerna för att se vilka buggar du hittat:");
   console.log("  npm run test   (eller: dotnet test src/BugMachine.Tests/)");
   console.log("  npm run status (för en sammanfattning per bugg)");
+  console.log("  npm run history (för streak och total progress)");
   console.log("──────────────────────────────────────────────────\n");
 }
 
