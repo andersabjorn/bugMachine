@@ -212,7 +212,7 @@ bug-machine/
 
 2. Lägg till namnet i `bugs`-arrayen i `bugs.config.js`
 
-3. Skapa en testfil `src/BugMachine.Tests/MinBuggTests.cs`
+3. Skapa en testfil `src/BugMachine.Tests/MinBuggTests.cs` (klassen måste heta `MinBuggTests` för att status ska känna igen den)
 
 4. Kör `npm run generate` och `npm run test`
 
