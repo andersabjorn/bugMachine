@@ -87,6 +87,8 @@ const current = fs.existsSync(CURRENT_JSON)
   ? JSON.parse(fs.readFileSync(CURRENT_JSON, "utf8"))
   : null;
 
+const DIVIDER = "──────────────────────────────────────────────────";
+
 console.log("\n╔══════════════════════════════════════════════════╗");
 console.log("║  🐛  BUG MACHINE  —  Historik                    ║");
 console.log("╚══════════════════════════════════════════════════╝\n");
@@ -126,10 +128,10 @@ const streakLabel = streak > 0
     ? "Ingen aktiv streak — lös en bugg idag för att starta en ny!"
     : "Ingen streak ännu";
 
-console.log("\n──────────────────────────────────────────────────");
+console.log(`\n${DIVIDER}`);
 if (totalBugs > 0) {
   console.log(`  ${streakLabel}  |  Totalt: ${totalSolved} / ${totalBugs} lösta`);
 } else {
   console.log(`  ${streakLabel}`);
 }
-console.log("──────────────────────────────────────────────────\n");
+console.log(`${DIVIDER}\n`);
