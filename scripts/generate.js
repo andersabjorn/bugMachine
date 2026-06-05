@@ -139,7 +139,8 @@ function printSummary(dayNumber, generated) {
   console.log("\n╔══════════════════════════════════════════════════╗");
   console.log(`║  🐛  BUG MACHINE  —  Dag ${String(dayNumber).padEnd(22)}║`);
   console.log("╚══════════════════════════════════════════════════╝\n");
-  console.log(`  ${generated.length} buggar genererade i src/BugMachine.Current/\n`);
+  const buggStr = generated.length === 1 ? "1 bugg genererad" : `${generated.length} buggar genererade`;
+  console.log(`  ${buggStr} i src/BugMachine.Current/\n`);
 
   for (const bug of generated) {
     const icon = diffColors[bug.difficulty] ?? "⚪";
@@ -153,6 +154,7 @@ function printSummary(dayNumber, generated) {
   console.log("  Kör testerna för att se vilka buggar du hittat:");
   console.log("  npm run test   (eller: dotnet test src/BugMachine.Tests/)");
   console.log("  npm run status (för en sammanfattning per bugg)");
+  console.log("  npm run history (för streak och total progress)");
   console.log("──────────────────────────────────────────────────\n");
 }
 

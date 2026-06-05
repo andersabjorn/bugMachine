@@ -16,7 +16,7 @@ function readArchivedDays() {
   return fs
     .readdirSync(DAYS_DIR)
     .filter((e) => /^day\d+$/.test(e))
-    .map((e) => parseInt(e.replace("day", ""), 10))
+    .map((e) => parseInt(e.slice(3), 10))
     .sort((a, b) => a - b)
     .map((n) => {
       const progressPath = path.join(DAYS_DIR, `day${n}`, "progress.json");
@@ -87,6 +87,8 @@ const current = fs.existsSync(CURRENT_JSON)
   ? JSON.parse(fs.readFileSync(CURRENT_JSON, "utf8"))
   : null;
 
+const DIVIDER = "──────────────────────────────────────────────────";
+
 console.log("\n╔══════════════════════════════════════════════════╗");
 console.log("║  🐛  BUG MACHINE  —  Historik                    ║");
 console.log("╚══════════════════════════════════════════════════╝\n");
@@ -120,12 +122,16 @@ for (const day of allDaysForTotal) {
 }
 
 const streakStr = streak === 1 ? "1 dag" : `${streak} dagar`;
-const streakLabel = streak > 0 ? `Streak: ${streakStr}` : "Ingen aktiv streak";
+const streakLabel = streak > 0
+  ? `Streak: ${streakStr}`
+  : archivedDays.length > 0
+    ? "Ingen aktiv streak — lös en bugg idag för att starta en ny!"
+    : "Ingen streak ännu";
 
-console.log("\n──────────────────────────────────────────────────");
+console.log(`\n${DIVIDER}`);
 if (totalBugs > 0) {
   console.log(`  ${streakLabel}  |  Totalt: ${totalSolved} / ${totalBugs} lösta`);
 } else {
   console.log(`  ${streakLabel}`);
 }
-console.log("──────────────────────────────────────────────────\n");
+console.log(`${DIVIDER}\n`);

@@ -2,7 +2,7 @@
 
 Daglig buggtränare i C# — inspirerat av [ThePrimeagen's kata-machine](https://github.com/ThePrimeagen/kata-machine).
 
-Istället för att implementera tomma funktioner får du **kod med inbyggda buggar** att hitta och fixa. Alla tester är klara — din uppgift är att få dem att bli gröna!
+Istället för att implementera tomma funktioner får du **kod med inbyggda buggar** att hitta och fixa. Alla tester är skrivna — din uppgift är att få dem att bli gröna!
 
 ---
 
@@ -85,7 +85,7 @@ Gårdagens filer arkiveras automatiskt i `days/dayN/` och du får en ny uppsätt
 | `npm run test` | Kör alla xUnit-tester mot aktuella filer |
 | `npm run test:quiet` | Kör tester med minimal output |
 | `npm run status` | Visa vilka buggar du löst och hur många tester som är gröna |
-| `npm run clear` | Rensa alla genererade filer och börja om |
+| `npm run clear` | Rensa genererade filer, dagarkiv och testresultat |
 | `npm run history` | Visa historik över tidigare dagar |
 
 Du kan också köra testerna direkt med dotnet:
@@ -152,6 +152,7 @@ Kör sedan `npm run generate` för att se effekten.
 
 ```
 bug-machine/
+├── .gitignore
 ├── bugs.config.js              # Konfigurera vilka buggar du tränar på
 ├── package.json                # npm-scripts
 ├── BugMachine.sln              # .NET Solution-fil
@@ -181,7 +182,7 @@ bug-machine/
 1. **Läs felet noga** — xUnit ger dig exakt vilket test som misslyckas och varför
 2. **Läs TIPS-kommentaren** i filen — den ger en ledtråd utan att avslöja svaret
 3. **Tänk på edge cases** — tomma arrayer, null-värden, enkla element
-4. **Kör ofta** — fixa en sak i taget och se om testerna förbättras
+4. **Kör ofta** — använd `npm run test:quiet` för snabb feedback, en sak i taget
 5. **Debugga** — använd Visual Studio eller VS Code debugger för att stega igenom koden
 6. **Följ din streak** — kör `npm run history` för att se din totala progress
 
@@ -211,7 +212,7 @@ bug-machine/
 
 2. Lägg till namnet i `bugs`-arrayen i `bugs.config.js`
 
-3. Skapa en testfil `src/BugMachine.Tests/MinBuggTests.cs`
+3. Skapa en testfil `src/BugMachine.Tests/MinBuggTests.cs` (klassen måste heta `MinBuggTests` för att status ska känna igen den)
 
 4. Kör `npm run generate` och `npm run test`
 
