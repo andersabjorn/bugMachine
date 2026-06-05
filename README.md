@@ -2,7 +2,7 @@
 
 Daglig buggtränare i C# — inspirerat av [ThePrimeagen's kata-machine](https://github.com/ThePrimeagen/kata-machine).
 
-Istället för att implementera tomma funktioner får du **kod med inbyggda buggar** att hitta och fixa. Alla tester är klara — din uppgift är att få dem att bli gröna!
+Istället för att implementera tomma funktioner får du **kod med inbyggda buggar** att hitta och fixa. Alla tester är skrivna — din uppgift är att få dem att bli gröna!
 
 ---
 
