@@ -7,8 +7,15 @@
     "list": "node ./scripts/list.js",
     "clear": "node ./scripts/clear.js",
     "test": "dotnet test src/BugMachine.Tests/ --logger \"console;verbosity=normal\"",
-    "test:quiet": "dotnet test src/BugMachine.Tests/"
+    "test:quiet": "dotnet test src/BugMachine.Tests/",
+    "stats": "node ./scripts/stats.js"
   },
-  "keywords": ["csharp", "dotnet", "bugs", "learning", "practice"],
+  "keywords": [
+    "csharp",
+    "dotnet",
+    "bugs",
+    "learning",
+    "practice"
+  ],
   "license": "MIT"
 }
