@@ -15,6 +15,11 @@ const allBugs = require(path.join(__dirname, "bugs.js"));
 
 const selectedBugNames = new Set(config.bugs);
 
+if (!Array.isArray(config.bugs)) {
+  console.error("❌ bugs.config.js: 'bugs' måste vara en array.");
+  process.exit(1);
+}
+
 if (selectedBugNames.size === 0) {
   console.error("❌ Inga buggar valda i bugs.config.js.");
   console.error('   Lägg till minst en bugg, t.ex: bugs: ["BubbleSort"]');
