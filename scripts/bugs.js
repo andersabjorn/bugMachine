@@ -21,7 +21,7 @@ const bugs = [
     name: "BubbleSort",
     difficulty: "easy",
     topic: "sorting",
-    hint: "Tänk på indexgränserna i den inre loopen - kan du gå utanför arrayen?",
+    hint: "Hur långt behöver innerloopen gå per pass — minskar antalet nödvändiga jämförelser ju fler pass som gjorts?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
