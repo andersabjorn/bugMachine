@@ -80,7 +80,7 @@ public static class BubbleSort
     name: "Stack",
     difficulty: "easy",
     topic: "datastrukturer",
-    hint: "En stack är LIFO (Last In, First Out) - vilket element ska tas bort vid Pop?",
+    hint: "En stack är LIFO — det sist inlagda ska poppas. Tar Pop() från rätt ände av den interna listan?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
