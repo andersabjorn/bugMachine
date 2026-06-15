@@ -168,7 +168,7 @@ public class Stack<T>
     name: "Queue",
     difficulty: "easy",
     topic: "datastrukturer",
-    hint: "En kö är FIFO (First In, First Out) - vilket element ska lämna kön vid Dequeue?",
+    hint: "En kö är FIFO — det som lades in först ska ut. Tar Dequeue() från rätt ände?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
