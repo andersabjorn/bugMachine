@@ -256,7 +256,7 @@ public class Queue<T>
     name: "BinarySearch",
     difficulty: "easy",
     topic: "sökning",
-    hint: "Kontrollera startvärdet för 'high' - är det korrekt för ett nollbaserat index?",
+    hint: "Sista giltiga index i en nollbaserad array med Length element — vad är det?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
