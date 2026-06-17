@@ -328,7 +328,7 @@ public static class BinarySearch
     name: "RecursionBug",
     difficulty: "easy",
     topic: "rekursion",
-    hint: "Varje rekursiv funktion behöver ett basfall - vad händer när n är 1?",
+    hint: "Fibonacci(0)=0 och Fibonacci(1)=1 — behöver rekursionen ett basfall för båda?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
