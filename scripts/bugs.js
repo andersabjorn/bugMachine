@@ -396,7 +396,7 @@ public static class RecursionBug
     name: "LinqBug",
     difficulty: "easy",
     topic: "csharp-linq",
-    hint: "Vad händer om sekvensen är tom när du anropar First()?",
+    hint: "First() och Max() kastar undantag på tomma sekvenser — finns det LINQ-alternativ som returnerar ett defaultvärde?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
