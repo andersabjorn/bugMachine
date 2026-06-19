@@ -460,7 +460,7 @@ public static class LinqBug
     name: "NullReferenceBug",
     difficulty: "easy",
     topic: "csharp-nullsafety",
-    hint: "Kan en sträng vara null? Vad händer när du anropar metoder på null?",
+    hint: "Kontrollera att varje värde inte är null innan du anropar metoder — vilken rad smäller vid körning?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
