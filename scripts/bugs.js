@@ -517,7 +517,7 @@ public static class NullReferenceBug
     name: "DictionaryBug",
     difficulty: "easy",
     topic: "csharp-collections",
-    hint: "Vad händer om nyckeln inte finns i Dictionary när du använder [] direkt?",
+    hint: "Dictionary[key] kastar KeyNotFoundException för okända nycklar — vilket alternativ är säkrare för att hämta ett värde?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
