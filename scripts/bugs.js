@@ -591,7 +591,7 @@ public static class DictionaryBug
     name: "StringReverseBug",
     difficulty: "easy",
     topic: "strängar",
-    hint: "Rita upp indexen på papper - vilket index ska bytas med vilket?",
+    hint: "Rita indexen 0..n-1 — vilka par av positioner ska byta plats för att spegla strängen?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
