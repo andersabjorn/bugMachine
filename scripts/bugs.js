@@ -660,7 +660,7 @@ public static class StringReverseBug
     name: "LinkedList",
     difficulty: "medium",
     topic: "datastrukturer",
-    hint: "Är Count alltid synkat med det faktiska antalet noder? Kontrollera alla metoder som ändrar listan.",
+    hint: "Spåra Count genom AddLast och Remove — uppdateras räknaren korrekt i båda?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Medel
