@@ -796,7 +796,7 @@ public class LinkedList<T>
     name: "MergeSort",
     difficulty: "medium",
     topic: "sortering",
-    hint: "Titta noga på merge-steget - när ska du ta från vänster vs höger sida?",
+    hint: "Jämförelseoperatorn i merge-steget avgör sorteringsriktningen — vilket värde ska väljas, det minsta eller det största?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Medel
