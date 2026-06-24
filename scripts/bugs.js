@@ -870,7 +870,7 @@ public static class MergeSort
     name: "QuickSort",
     difficulty: "medium",
     topic: "sortering",
-    hint: "Kontrollera hur pivoten placeras i partition-steget - är alla element korrekt placerade runt den?",
+    hint: "Efter partition är pivoten på sin slutliga plats — rekursionen ska hantera elementen runt den, inte inklusive den.",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Medel
