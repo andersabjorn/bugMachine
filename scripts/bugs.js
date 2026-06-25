@@ -936,7 +936,7 @@ public static class QuickSort
     name: "TreeTraversal",
     difficulty: "medium",
     topic: "träd",
-    hint: "Inorder-traversering besöker noder i ordningen: Vänster → Root → Höger. Är det vad koden gör?",
+    hint: "Inorder ger sorterad utskrift i ett BST: Vänster → Root → Höger — är de rekursiva anropen i rätt ordning?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Medel
