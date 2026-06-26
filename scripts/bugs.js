@@ -1040,7 +1040,7 @@ public class BinaryTree
     name: "AsyncAwaitBug",
     difficulty: "medium",
     topic: "csharp-async",
-    hint: "Att använda .Result på en async metod kan orsaka deadlock - vad är det korrekta sättet att anropa async kod?",
+    hint: ".Result blockerar tråden synkront och kan orsaka deadlock — vad används istället för att invänta ett Task asynkront?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Medel
