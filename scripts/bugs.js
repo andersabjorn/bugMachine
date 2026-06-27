@@ -1105,7 +1105,7 @@ public class AsyncAwaitBug
     name: "MinHeap",
     difficulty: "medium",
     topic: "datastrukturer",
-    hint: "När du väljer vilket barn att byta med föräldern i heapify-ner - ska du alltid välja vänster barn?",
+    hint: "I HeapifyDown måste du jämföra båda barnen och välja det minsta — vad händer om du alltid väljer vänster?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Medel
