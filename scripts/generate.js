@@ -110,7 +110,7 @@ function printSummary(dayNumber, generated) {
   console.log("\n╔══════════════════════════════════════════════════╗");
   console.log(`║  🐛  BUG MACHINE  —  Dag ${String(dayNumber).padEnd(22)}║`);
   console.log("╚══════════════════════════════════════════════════╝\n");
-  console.log(`  ${generated.length} buggar genererade i src/day${dayNumber}/\n`);
+  console.log(`  ${generated.length} av ${allBugs.length} buggar genererade i src/day${dayNumber}/\n`);
 
   for (const bug of generated) {
     const icon = diffColors[bug.difficulty] ?? "⚪";
