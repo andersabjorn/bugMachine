@@ -141,7 +141,7 @@ try {
   printSummary(nextDay, generated);
 
   if (skipped.length > 0) {
-    console.log(`  (${skipped.length} buggar inte valda idag - stubs genererade)\n`);
+    console.log(`  (${skipped.length} buggar fick stub-kod — lägg till i bugs.config.js för att träna på dem)\n`);
   }
 } catch (err) {
   console.error("❌ Fel vid generering:", err.message);
