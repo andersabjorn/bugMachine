@@ -136,7 +136,7 @@ try {
 
   updateCsproj(nextDay);
 
-  console.log(`📁 Dag ${nextDay} skapad → src/day${nextDay}/`);
+  console.log(`\n📁 Dag ${nextDay} skapad → src/day${nextDay}/`);
 
   printSummary(nextDay, generated);
 
