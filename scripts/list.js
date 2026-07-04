@@ -4,7 +4,8 @@ const allBugs = require("./bugs.js");
 
 const icons  = { easy: "🟢", medium: "🟡", hard: "🔴" };
 const labels = { easy: "Lätt  ", medium: "Medel ", hard: "Svår  " };
-const order  = ["easy", "medium", "hard"];
+const order   = ["easy", "medium", "hard"];
+const verbose = process.argv.includes("--hints");
 
 console.log("\n╔══════════════════════════════════════════════════╗");
 console.log("║  🐛  BUG MACHINE  —  Tillgängliga buggar         ║");
@@ -17,6 +18,7 @@ for (const diff of order) {
     const icon  = icons[diff]  ?? "⚪";
     const label = labels[diff] ?? "      ";
     console.log(`  ${icon} ${label}  ${bug.name.padEnd(20)} ${bug.topic}`);
+    if (verbose) console.log(`             💡 ${bug.hint}`);
   }
 }
 
