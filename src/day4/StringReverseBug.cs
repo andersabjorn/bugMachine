@@ -14,10 +14,9 @@ public static class StringReverseBug
 
         for (int i = 0; i < n / 2; i++)
         {
-            // BUG: n - i ska vara n - i - 1 (nollbaserat index)
             char temp = chars[i];
-            chars[i] = chars[n - i];       // BUG: IndexOutOfRangeException
-            chars[n - i] = temp;            // BUG: IndexOutOfRangeException
+            chars[i] = chars[n - i];
+            chars[n - i] = temp;
         }
 
         return new string(chars);

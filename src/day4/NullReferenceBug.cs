@@ -9,14 +9,12 @@ public static class NullReferenceBug
     /// <summary>Returnerar strängen med versaler, eller tom sträng om null.</summary>
     public static string ToUpperSafe(string? input)
     {
-        // BUG: kastar NullReferenceException när input är null
         return input.ToUpper();
     }
 
     /// <summary>Returnerar längden på strängen, eller 0 om null.</summary>
     public static int SafeLength(string? input)
     {
-        // BUG: kastar NullReferenceException när input är null
         return input.Length;
     }
 

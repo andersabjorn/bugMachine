@@ -30,7 +30,6 @@ public class LinkedList<T>
         var curr = _head;
         while (curr.Next != null) curr = curr.Next;
         curr.Next = node;
-        // BUG: Count++ saknas här - Count räknas inte upp vid AddLast
     }
 
     public bool Remove(T value)
@@ -50,7 +49,6 @@ public class LinkedList<T>
             if (EqualityComparer<T>.Default.Equals(curr.Next.Value, value))
             {
                 curr.Next = curr.Next.Next;
-                // BUG: Count-- saknas här - Count minskas inte vid Remove (icke-head)
                 return true;
             }
             curr = curr.Next;

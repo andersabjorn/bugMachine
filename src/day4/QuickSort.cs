@@ -13,7 +13,7 @@ public static class QuickSort
         if (low < high)
         {
             int pivotIndex = Partition(arr, low, high);
-            Sort(arr, low, pivotIndex);         // BUG: ska vara pivotIndex - 1
+            Sort(arr, low, pivotIndex);
             Sort(arr, pivotIndex + 1, high);
         }
     }
