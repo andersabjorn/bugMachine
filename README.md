@@ -2,15 +2,14 @@
 
 Daglig buggtränare i C# — inspirerat av [ThePrimeagen's kata-machine](https://github.com/ThePrimeagen/kata-machine).
 
-Istället för att implementera tomma funktioner får du **kod med inbyggda buggar** att hitta och fixa. Alla tester är skrivna — din uppgift är att få dem att bli gröna!
+Istället för att implementera tomma funktioner får du **kod med inbyggda buggar** att hitta och fixa. Alla tester är klara — din uppgift är att få dem att bli gröna!
 
 ---
 
 ## Kom igång
 
 ### Krav
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/) 18 eller senare (för generatorn)
+- [Node.js](https://nodejs.org/) (för generatorn)
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 
 ### Installation
@@ -30,7 +29,7 @@ cd bugMachine
 npm run generate
 ```
 
-Detta skapar buggiga C#-filer i `src/BugMachine.Current/`. Du ser direkt vilka buggar du ska lösa och deras svårighetsgrad.
+Detta skapar en ny mapp `src/dayN/` med buggiga C#-filer. Du ser direkt vilka buggar du ska lösa och deras svårighetsgrad.
 
 ### 2. Kör testerna
 
@@ -38,11 +37,11 @@ Detta skapar buggiga C#-filer i `src/BugMachine.Current/`. Du ser direkt vilka b
 npm run test
 ```
 
-Alla tester misslyckas från start — det är meningen! Din uppgift är att fixa buggarna i `src/BugMachine.Current/` tills alla tester är gröna.
+Alla tester misslyckas från start — det är meningen! Din uppgift är att fixa buggarna i `src/dayN/` tills alla tester är gröna.
 
 ### 3. Fixa buggarna
 
-Öppna filerna i `src/BugMachine.Current/` i din favorit-editor (t.ex. Visual Studio, Rider, eller VS Code med C#-tillägg).
+Öppna filerna i `src/dayN/` i din favorit-editor (t.ex. Visual Studio, Rider, eller VS Code med C#-tillägg).
 
 Varje fil innehåller:
 - En kommentar med svårighetsgrad
@@ -52,28 +51,18 @@ Varje fil innehåller:
 ### 4. Verifiera lösningen
 
 ```bash
-npm run status
+npm run test
 ```
 
-Visar vilka buggar du löst och hur många tester som är gröna. Du kan också köra `npm run test` för full xUnit-output.
+Grön = du hittat och fixat buggen! 🎉
 
-### 5. Committa dina lösningar
-
-```bash
-git add src/BugMachine.Current/
-git commit -m "Dag X – löste BubbleSort, Stack, Queue"
-git push
-```
-
-Detta sparar ditt arbete och ger dig en grön prick på GitHub! 🟩
-
-### 6. Nästa dag — nya buggar
+### 5. Nästa dag — nya buggar
 
 ```bash
 npm run generate
 ```
 
-Gårdagens filer arkiveras automatiskt i `days/dayN/` och du får en ny uppsättning buggar. Kör `npm run history` för att se din totala progress och streak.
+Varje dag sparas i sin egna mapp `src/dayN/` och du får en ny uppsättning buggar.
 
 ---
 
@@ -81,12 +70,12 @@ Gårdagens filer arkiveras automatiskt i `days/dayN/` och du får en ny uppsätt
 
 | Kommando | Beskrivning |
 |---------|-------------|
-| `npm run generate` | Generera nya buggiga filer (arkiverar förra dagen) |
+| `npm run generate` | Generera nya buggiga filer i `src/dayN/` |
 | `npm run test` | Kör alla xUnit-tester mot aktuella filer |
 | `npm run test:quiet` | Kör tester med minimal output |
-| `npm run status` | Visa vilka buggar du löst och hur många tester som är gröna |
-| `npm run clear` | Rensa genererade filer, dagarkiv och testresultat |
-| `npm run history` | Visa historik över tidigare dagar |
+| `npm run list` | Visa tillgängliga buggar (lägg till `--hints` för tips) |
+| `npm run stats` | Visa statistik om projektet |
+| `npm run clear` | Rensa alla genererade filer och börja om |
 
 Du kan också köra testerna direkt med dotnet:
 ```bash
@@ -97,7 +86,7 @@ dotnet test src/BugMachine.Tests/
 
 ## Konfigurera vilka buggar du vill träna på
 
-Redigera `bugs.config.js` för att välja vilka buggar som ingår. Alla buggar är aktiverade som standard — ta bort rader för att fokusera på specifika kategorier.
+Redigera `bugs.config.js` för att välja vilka buggar som ingår:
 
 ```javascript
 module.exports = {
@@ -140,39 +129,29 @@ Kör sedan `npm run generate` för att se effekten.
 | `AsyncAwaitBug` | C# Async | `.Result` på async metod → potentiell deadlock |
 | `MinHeap` | Datastrukturer | HeapifyDown kontrollerar aldrig höger barn |
 
-### 🔴 Svår
-| Namn | Kategori | Vad är buggen? |
-|------|---------|----------------|
-| `ClosureBug` | Lambdas | Lambda fångar loop-variabel by reference istället för by value |
-| `LruCache` | Datastrukturer | `Get()` uppdaterar inte recency-ordningen vid cache-träff |
-
 ---
 
 ## Filstruktur
 
 ```
 bug-machine/
-├── .gitignore
 ├── bugs.config.js              # Konfigurera vilka buggar du tränar på
 ├── package.json                # npm-scripts
 ├── BugMachine.sln              # .NET Solution-fil
 ├── scripts/
 │   ├── generate.js             # Genererar dagens buggar
 │   ├── bugs.js                 # Alla buggdefinitioner (mallar)
-│   ├── status.js               # Visar progress för aktuell dag
-│   ├── history.js              # Visar historik och streak
 │   └── clear.js                # Rensar genererade filer
-├── src/
-│   ├── BugMachine.Current/     # ← Här redigerar du! (genereras om varje dag)
-│   │   ├── BugMachine.Current.csproj
-│   │   └── *.cs               # Buggiga C#-filer
-│   └── BugMachine.Tests/       # ← Rör inte detta! (statiska tester)
-│       ├── BugMachine.Tests.csproj
-│       └── *Tests.cs          # xUnit-tester
-└── days/                       # Arkiv av gamla dagar
-    ├── current.json            # Info om aktuell dag
-    ├── day1/
-    └── day2/
+└── src/
+    ├── BugMachine.Current/     # Pekar alltid på senaste dagen (via csproj)
+    │   └── BugMachine.Current.csproj
+    ├── BugMachine.Tests/       # ← Rör inte detta! (statiska tester)
+    │   ├── BugMachine.Tests.csproj
+    │   └── *Tests.cs           # xUnit-tester
+    ├── day1/                   # Äldre genererade dagar
+    ├── day2/
+    └── dayN/                   # ← Här redigerar du! (senast genererade)
+        └── *.cs                # Buggiga C#-filer
 ```
 
 ---
@@ -182,9 +161,8 @@ bug-machine/
 1. **Läs felet noga** — xUnit ger dig exakt vilket test som misslyckas och varför
 2. **Läs TIPS-kommentaren** i filen — den ger en ledtråd utan att avslöja svaret
 3. **Tänk på edge cases** — tomma arrayer, null-värden, enkla element
-4. **Kör ofta** — använd `npm run test:quiet` för snabb feedback, en sak i taget
+4. **Kör ofta** — fixa en sak i taget och se om testerna förbättras
 5. **Debugga** — använd Visual Studio eller VS Code debugger för att stega igenom koden
-6. **Följ din streak** — kör `npm run history` för att se din totala progress
 
 ---
 
@@ -204,15 +182,12 @@ bug-machine/
   stubCode: `namespace BugMachine.Current;
 // ... Korrekt kod som stub (används när buggen inte är vald idag)
 `,
-  correctCode: `namespace BugMachine.Current;
-// ... Referenslösning (används inte automatiskt, men dokumenterar rätt svar)
-`,
 }
 ```
 
-2. Lägg till namnet i `bugs`-arrayen i `bugs.config.js`
+2. Lägg till namn i `bugs.config.js`
 
-3. Skapa en testfil `src/BugMachine.Tests/MinBuggTests.cs` (klassen måste heta `MinBuggTests` för att status ska känna igen den)
+3. Skapa en testfil `src/BugMachine.Tests/MinBuggTests.cs`
 
 4. Kör `npm run generate` och `npm run test`
 

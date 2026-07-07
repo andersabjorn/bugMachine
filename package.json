@@ -1,24 +1,21 @@
 {
   "name": "bug-machine",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Generera buggar i C# att hitta och fixa - inspirerat av ThePrimeagen's kata-machine",
   "scripts": {
     "generate": "node ./scripts/generate.js",
+    "list": "node ./scripts/list.js",
     "clear": "node ./scripts/clear.js",
     "test": "dotnet test src/BugMachine.Tests/ --logger \"console;verbosity=normal\"",
     "test:quiet": "dotnet test src/BugMachine.Tests/",
-    "status": "node ./scripts/status.js",
-    "history": "node ./scripts/history.js"
+    "stats": "node ./scripts/stats.js"
   },
-  "keywords": ["csharp", "dotnet", "bugs", "learning", "practice"],
-  "license": "MIT",
-  "private": true,
-  "author": "Anders Abjörn",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/andersabjorn/bugMachine.git"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  }
+  "keywords": [
+    "csharp",
+    "dotnet",
+    "bugs",
+    "learning",
+    "practice"
+  ],
+  "license": "MIT"
 }

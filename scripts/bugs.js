@@ -21,7 +21,7 @@ const bugs = [
     name: "BubbleSort",
     difficulty: "easy",
     topic: "sorting",
-    hint: "Tänk på indexgränserna i den inre loopen - kan du gå utanför arrayen?",
+    hint: "Hur långt behöver innerloopen gå per pass — minskar antalet nödvändiga jämförelser ju fler pass som gjorts?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
@@ -80,7 +80,7 @@ public static class BubbleSort
     name: "Stack",
     difficulty: "easy",
     topic: "datastrukturer",
-    hint: "En stack är LIFO (Last In, First Out) - vilket element ska tas bort vid Pop?",
+    hint: "En stack är LIFO — det sist inlagda ska poppas. Tar Pop() från rätt ände av den interna listan?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
@@ -168,7 +168,7 @@ public class Stack<T>
     name: "Queue",
     difficulty: "easy",
     topic: "datastrukturer",
-    hint: "En kö är FIFO (First In, First Out) - vilket element ska lämna kön vid Dequeue?",
+    hint: "En kö är FIFO — det som lades in först ska ut. Tar Dequeue() från rätt ände?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
@@ -256,7 +256,7 @@ public class Queue<T>
     name: "BinarySearch",
     difficulty: "easy",
     topic: "sökning",
-    hint: "Kontrollera startvärdet för 'high' - är det korrekt för ett nollbaserat index?",
+    hint: "Sista giltiga index i en nollbaserad array med Length element — vad är det?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
@@ -328,7 +328,7 @@ public static class BinarySearch
     name: "RecursionBug",
     difficulty: "easy",
     topic: "rekursion",
-    hint: "Varje rekursiv funktion behöver ett basfall - vad händer när n är 1?",
+    hint: "Fibonacci(0)=0 och Fibonacci(1)=1 — behöver rekursionen ett basfall för båda?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
@@ -395,7 +395,7 @@ public static class RecursionBug
     name: "LinqBug",
     difficulty: "easy",
     topic: "csharp-linq",
-    hint: "Vad händer om sekvensen är tom när du anropar First()?",
+    hint: "First() och Max() kastar undantag på tomma sekvenser — finns det LINQ-alternativ som returnerar ett defaultvärde?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
@@ -457,7 +457,7 @@ public static class LinqBug
     name: "NullReferenceBug",
     difficulty: "easy",
     topic: "csharp-nullsafety",
-    hint: "Kan en sträng vara null? Vad händer när du anropar metoder på null?",
+    hint: "Kontrollera att varje värde inte är null innan du anropar metoder — vilken rad smäller vid körning?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
@@ -512,7 +512,7 @@ public static class NullReferenceBug
     name: "DictionaryBug",
     difficulty: "easy",
     topic: "csharp-collections",
-    hint: "Vad händer om nyckeln inte finns i Dictionary när du använder [] direkt?",
+    hint: "Dictionary[key] kastar KeyNotFoundException för okända nycklar — vilket alternativ är säkrare för att hämta ett värde?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
@@ -584,7 +584,7 @@ public static class DictionaryBug
     name: "StringReverseBug",
     difficulty: "easy",
     topic: "strängar",
-    hint: "Rita upp indexen på papper - vilket index ska bytas med vilket?",
+    hint: "Rita indexen 0..n-1 — vilka par av positioner ska byta plats för att spegla strängen?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
@@ -652,7 +652,7 @@ public static class StringReverseBug
     name: "LinkedList",
     difficulty: "medium",
     topic: "datastrukturer",
-    hint: "Är Count alltid synkat med det faktiska antalet noder? Kontrollera alla metoder som ändrar listan.",
+    hint: "Spåra Count genom AddLast och Remove — uppdateras räknaren korrekt i båda?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Medel
@@ -786,7 +786,7 @@ public class LinkedList<T>
     name: "MergeSort",
     difficulty: "medium",
     topic: "sortering",
-    hint: "Titta noga på merge-steget - när ska du ta från vänster vs höger sida?",
+    hint: "Jämförelseoperatorn i merge-steget avgör sorteringsriktningen — vilket värde ska väljas, det minsta eller det största?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Medel
@@ -859,7 +859,7 @@ public static class MergeSort
     name: "QuickSort",
     difficulty: "medium",
     topic: "sortering",
-    hint: "Kontrollera hur pivoten placeras i partition-steget - är alla element korrekt placerade runt den?",
+    hint: "Efter partition är pivoten på sin slutliga plats — rekursionen ska hantera elementen runt den, inte inklusive den.",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Medel
@@ -925,7 +925,7 @@ public static class QuickSort
     name: "TreeTraversal",
     difficulty: "medium",
     topic: "träd",
-    hint: "Inorder-traversering besöker noder i ordningen: Vänster → Root → Höger. Är det vad koden gör?",
+    hint: "Inorder ger sorterad utskrift i ett BST: Vänster → Root → Höger — är de rekursiva anropen i rätt ordning?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Medel
@@ -1028,7 +1028,7 @@ public class BinaryTree
     name: "AsyncAwaitBug",
     difficulty: "medium",
     topic: "csharp-async",
-    hint: "Att använda .Result på en async metod kan orsaka deadlock - vad är det korrekta sättet att anropa async kod?",
+    hint: ".Result blockerar tråden synkront och kan orsaka deadlock — vad används istället för att invänta ett Task asynkront?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Medel
@@ -1092,7 +1092,7 @@ public class AsyncAwaitBug
     name: "MinHeap",
     difficulty: "medium",
     topic: "datastrukturer",
-    hint: "När du väljer vilket barn att byta med föräldern i heapify-ner - ska du alltid välja vänster barn?",
+    hint: "I HeapifyDown måste du jämföra båda barnen och välja det minsta — vad händer om du alltid väljer vänster?",
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Medel

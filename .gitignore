@@ -1,15 +1,12 @@
-# .NET Build
+# .NET build artifacts
 bin/
 obj/
 *.user
-*.trx
+
+# IDE
 .vs/
-
-# JetBrains
 .idea/
-
-# Node.js
-node_modules/
+*.suo
 
 # OS
 .DS_Store
