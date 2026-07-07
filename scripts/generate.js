@@ -116,7 +116,7 @@ function printSummary(dayNumber, generated) {
     const icon = diffColors[bug.difficulty] ?? "⚪";
     const label = diffLabels[bug.difficulty] ?? "      ";
     console.log(`  ${icon} ${label}  ${bug.name}`);
-    console.log(`             💡 ${bug.hint}`);
+    console.log(`             💡 Tips: ${bug.hint}`);
     console.log();
   }
 
