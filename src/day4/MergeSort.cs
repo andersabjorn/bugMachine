@@ -24,7 +24,6 @@ public static class MergeSort
 
         while (i < left.Length && j < right.Length)
         {
-            // BUG: >= istället för <= - detta sorterar i fallande ordning
             if (left[i] >= right[j])
             {
                 result[k++] = left[i++];

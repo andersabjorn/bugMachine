@@ -12,7 +12,6 @@ public static class DictionaryBug
         TKey key,
         TValue defaultValue) where TKey : notnull
     {
-        // BUG: kastar KeyNotFoundException om nyckeln saknas
         return dict[key];
     }
 
@@ -22,7 +21,6 @@ public static class DictionaryBug
         var result = new Dictionary<char, int>();
         foreach (char c in text)
         {
-            // BUG: kastar KeyNotFoundException vid första förekomsten av varje tecken
             result[c] = result[c] + 1;
         }
         return result;

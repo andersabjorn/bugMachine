@@ -25,7 +25,7 @@ const bugs = [
     buggyCode: `namespace BugMachine.Current;
 
 // SVÅRIGHET: Lätt
-// TIPS: ${`Tänk på indexgränserna i den inre loopen - kan du gå utanför arrayen?`}
+// TIPS: Tänk på indexgränserna i den inre loopen - kan du gå utanför arrayen?
 // Hitta och fixa buggen/buggarna i denna metod.
 
 public static class BubbleSort
@@ -35,7 +35,7 @@ public static class BubbleSort
         int n = arr.Length;
         for (int i = 0; i < n - 1; i++)
         {
-            for (int j = 0; j < n - i; j++)   // BUG: går utanför arraygränsen
+            for (int j = 0; j < n - i; j++)
             {
                 if (arr[j] > arr[j + 1])
                 {
@@ -103,8 +103,8 @@ public class Stack<T>
         if (_items.Count == 0)
             throw new InvalidOperationException("Stacken är tom.");
 
-        T item = _items[0];             // BUG: ska vara _items[^1] (sista elementet)
-        _items.RemoveAt(0);             // BUG: ska ta bort sista elementet
+        T item = _items[0];
+        _items.RemoveAt(0);
         return item;
     }
 
@@ -191,8 +191,8 @@ public class Queue<T>
         if (_items.Count == 0)
             throw new InvalidOperationException("Kön är tom.");
 
-        T item = _items.Last!.Value;   // BUG: ska ta från First (FIFO), inte Last
-        _items.RemoveLast();            // BUG: ska ta bort First
+        T item = _items.Last!.Value;
+        _items.RemoveLast();
         return item;
     }
 
@@ -269,7 +269,7 @@ public static class BinarySearch
     public static int Search(int[] sortedArr, int target)
     {
         int low = 0;
-        int high = sortedArr.Length;   // BUG: ska vara Length - 1
+        int high = sortedArr.Length;
 
         while (low <= high)
         {
@@ -341,7 +341,6 @@ public static class RecursionBug
     public static long Fibonacci(int n)
     {
         if (n <= 0) return 0;
-        // BUG: saknar basfall för n == 1, orsakar oändlig rekursion → StackOverflow
         return Fibonacci(n - 1) + Fibonacci(n - 2);
     }
 
@@ -408,7 +407,6 @@ public static class LinqBug
     /// <summary>Returnerar det första jämna talet, eller null om inget finns.</summary>
     public static int? FindFirstEven(IEnumerable<int> numbers)
     {
-        // BUG: .First() kastar InvalidOperationException om inga jämna tal finns
         return numbers.First(n => n % 2 == 0);
     }
 
@@ -421,7 +419,6 @@ public static class LinqBug
     /// <summary>Returnerar det största elementet, eller null för tom sekvens.</summary>
     public static int? MaxOrNull(IEnumerable<int> numbers)
     {
-        // BUG: .Max() kastar InvalidOperationException för tom sekvens
         return numbers.Max();
     }
 }
@@ -472,14 +469,12 @@ public static class NullReferenceBug
     /// <summary>Returnerar strängen med versaler, eller tom sträng om null.</summary>
     public static string ToUpperSafe(string? input)
     {
-        // BUG: kastar NullReferenceException när input är null
         return input.ToUpper();
     }
 
     /// <summary>Returnerar längden på strängen, eller 0 om null.</summary>
     public static int SafeLength(string? input)
     {
-        // BUG: kastar NullReferenceException när input är null
         return input.Length;
     }
 
@@ -532,7 +527,6 @@ public static class DictionaryBug
         TKey key,
         TValue defaultValue) where TKey : notnull
     {
-        // BUG: kastar KeyNotFoundException om nyckeln saknas
         return dict[key];
     }
 
@@ -542,7 +536,6 @@ public static class DictionaryBug
         var result = new Dictionary<char, int>();
         foreach (char c in text)
         {
-            // BUG: kastar KeyNotFoundException vid första förekomsten av varje tecken
             result[c] = result[c] + 1;
         }
         return result;
@@ -608,10 +601,9 @@ public static class StringReverseBug
 
         for (int i = 0; i < n / 2; i++)
         {
-            // BUG: n - i ska vara n - i - 1 (nollbaserat index)
             char temp = chars[i];
-            chars[i] = chars[n - i];       // BUG: IndexOutOfRangeException
-            chars[n - i] = temp;            // BUG: IndexOutOfRangeException
+            chars[i] = chars[n - i];
+            chars[n - i] = temp;
         }
 
         return new string(chars);
@@ -693,7 +685,6 @@ public class LinkedList<T>
         var curr = _head;
         while (curr.Next != null) curr = curr.Next;
         curr.Next = node;
-        // BUG: Count++ saknas här - Count räknas inte upp vid AddLast
     }
 
     public bool Remove(T value)
@@ -713,7 +704,6 @@ public class LinkedList<T>
             if (EqualityComparer<T>.Default.Equals(curr.Next.Value, value))
             {
                 curr.Next = curr.Next.Next;
-                // BUG: Count-- saknas här - Count minskas inte vid Remove (icke-head)
                 return true;
             }
             curr = curr.Next;
@@ -823,7 +813,6 @@ public static class MergeSort
 
         while (i < left.Length && j < right.Length)
         {
-            // BUG: >= istället för <= - detta sorterar i fallande ordning
             if (left[i] >= right[j])
             {
                 result[k++] = left[i++];
@@ -886,7 +875,7 @@ public static class QuickSort
         if (low < high)
         {
             int pivotIndex = Partition(arr, low, high);
-            Sort(arr, low, pivotIndex);         // BUG: ska vara pivotIndex - 1
+            Sort(arr, low, pivotIndex);
             Sort(arr, pivotIndex + 1, high);
         }
     }
@@ -978,7 +967,6 @@ public class BinaryTree
     private void InorderTraversal(Node? node, List<int> result)
     {
         if (node == null) return;
-        // BUG: Höger besöks INNAN vänster - ska vara Vänster → Root → Höger
         InorderTraversal(node.Right, result);
         result.Add(node.Value);
         InorderTraversal(node.Left, result);
@@ -1054,8 +1042,8 @@ public class AsyncAwaitBug
     public async Task<string> GetData()
     {
         var task = FetchDataAsync();
-        task.Wait();           // BUG: .Wait() blockerar tråden - ska vara: await task
-        return task.Result;    // BUG: .Result efter Wait() - ska vara: return await task
+        task.Wait();
+        return task.Result;
     }
 
     /// <summary>Hämtar och bearbetar flera datakällor parallellt.</summary>
@@ -1064,7 +1052,6 @@ public class AsyncAwaitBug
         var results = new List<string>();
         foreach (var url in urls)
         {
-            // BUG: väntar sekventiellt med .Result istället för parallellt med Task.WhenAll
             results.Add(SimulateHttpCallAsync(url).Result);
         }
         return results;
@@ -1166,11 +1153,7 @@ public class MinHeap
         {
             int left = 2 * i + 1;
             int right = 2 * i + 2;
-            // BUG: väljer alltid vänster barn utan att kontrollera om höger är mindre
             int smallest = left;
-
-            // Ska kontrollera höger barn också:
-            // if (right < n && _data[right] < _data[smallest]) smallest = right;
 
             if (left >= n || _data[i] <= _data[smallest]) break;
 
@@ -1217,6 +1200,154 @@ public class MinHeap
 }
 `,
     correctCode: `// Same as stub - add right-child comparison in HeapifyDown`,
+  },
+
+  // ─────────────────────────────────────────────
+  // HARD BUGS
+  // ─────────────────────────────────────────────
+
+  {
+    name: "ClosureBug",
+    difficulty: "hard",
+    topic: "lambdas",
+    hint: "Tänk på vad som faktiskt fångas i en lambda - variabeln eller dess värde?",
+    buggyCode: `namespace BugMachine.Current;
+
+// SVÅRIGHET: Svår
+// TIPS: Tänk på vad som faktiskt fångas i en lambda - variabeln eller dess värde?
+// Hitta och fixa buggen/buggarna i denna klass.
+
+public static class ClosureBug
+{
+    /// <summary>Skapar en lista med funktioner som var och en ska returnera sitt index (0, 1, 2 ...).</summary>
+    public static List<Func<int>> CreateCounters(int count)
+    {
+        var counters = new List<Func<int>>();
+        for (int i = 0; i < count; i++)
+        {
+            counters.Add(() => i);
+        }
+        return counters;
+    }
+
+    /// <summary>Async-version: varje funktion ska returnera sitt index som en Task.</summary>
+    public static List<Func<Task<int>>> CreateAsyncCounters(int count)
+    {
+        var counters = new List<Func<Task<int>>>();
+        for (int i = 0; i < count; i++)
+        {
+            counters.Add(() => Task.FromResult(i));
+        }
+        return counters;
+    }
+}
+`,
+    stubCode: `namespace BugMachine.Current;
+
+public static class ClosureBug
+{
+    public static List<Func<int>> CreateCounters(int count)
+    {
+        var counters = new List<Func<int>>();
+        for (int i = 0; i < count; i++) { int c = i; counters.Add(() => c); }
+        return counters;
+    }
+    public static List<Func<Task<int>>> CreateAsyncCounters(int count)
+    {
+        var counters = new List<Func<Task<int>>>();
+        for (int i = 0; i < count; i++) { int c = i; counters.Add(() => Task.FromResult(c)); }
+        return counters;
+    }
+}
+`,
+    correctCode: `// FIXAD: Introducera int captured = i; inuti loopen och fånga captured istället för i`,
+  },
+
+  {
+    name: "LruCache",
+    difficulty: "hard",
+    topic: "datastrukturer",
+    hint: "Vid ett cache-träff - räcker det att returnera värdet, eller behöver något uppdateras?",
+    buggyCode: `namespace BugMachine.Current;
+
+// SVÅRIGHET: Svår
+// TIPS: Vid ett cache-träff - räcker det att returnera värdet, eller behöver något uppdateras?
+// Hitta och fixa buggen/buggarna i denna klass.
+
+public class LruCache
+{
+    private readonly int _capacity;
+    private readonly Dictionary<int, LinkedListNode<(int Key, int Value)>> _map;
+    private readonly LinkedList<(int Key, int Value)> _list;
+
+    public LruCache(int capacity)
+    {
+        _capacity = capacity;
+        _map = new Dictionary<int, LinkedListNode<(int, int)>>();
+        _list = new LinkedList<(int, int)>();
+    }
+
+    /// <summary>Returnerar det cachade värdet för nyckeln, eller -1 om den inte finns.</summary>
+    public int Get(int key)
+    {
+        if (!_map.TryGetValue(key, out var node))
+            return -1;
+
+        return node.Value.Value;
+    }
+
+    /// <summary>Sätter ett värde i cachen. Kastar ut det minst nyligen använda elementet om cachen är full.</summary>
+    public void Put(int key, int value)
+    {
+        if (_map.TryGetValue(key, out var existing))
+        {
+            _list.Remove(existing);
+            _map.Remove(key);
+        }
+
+        var newNode = _list.AddFirst((key, value));
+        _map[key] = newNode;
+
+        if (_list.Count > _capacity)
+        {
+            var lru = _list.Last!;
+            _map.Remove(lru.Value.Key);
+            _list.RemoveLast();
+        }
+    }
+}
+`,
+    stubCode: `namespace BugMachine.Current;
+
+public class LruCache
+{
+    private readonly int _capacity;
+    private readonly Dictionary<int, LinkedListNode<(int Key, int Value)>> _map;
+    private readonly LinkedList<(int Key, int Value)> _list;
+    public LruCache(int capacity)
+    {
+        _capacity = capacity;
+        _map = new Dictionary<int, LinkedListNode<(int, int)>>();
+        _list = new LinkedList<(int, int)>();
+    }
+    public int Get(int key)
+    {
+        if (!_map.TryGetValue(key, out var node)) return -1;
+        _list.Remove(node);
+        var newNode = _list.AddFirst(node.Value);
+        _map[key] = newNode;
+        return newNode.Value.Value;
+    }
+    public void Put(int key, int value)
+    {
+        if (_map.TryGetValue(key, out var existing)) { _list.Remove(existing); _map.Remove(key); }
+        var newNode = _list.AddFirst((key, value));
+        _map[key] = newNode;
+        if (_list.Count > _capacity) { var lru = _list.Last!; _map.Remove(lru.Value.Key); _list.RemoveLast(); }
+    }
+}
+`,
+    correctCode: `// FIXAD: Get() flyttar noden till listans framsida för att uppdatera recency`,
   },
 ];
 

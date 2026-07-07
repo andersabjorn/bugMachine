@@ -39,7 +39,6 @@ public class BinaryTree
     private void InorderTraversal(Node? node, List<int> result)
     {
         if (node == null) return;
-        // BUG: Höger besöks INNAN vänster - ska vara Vänster → Root → Höger
         InorderTraversal(node.Right, result);
         result.Add(node.Value);
         InorderTraversal(node.Left, result);
