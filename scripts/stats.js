@@ -10,8 +10,12 @@ const SRC_DIR = path.join(ROOT, "src");
 const easy   = allBugs.filter((b) => b.difficulty === "easy").length;
 const medium = allBugs.filter((b) => b.difficulty === "medium").length;
 
-const dayDirs = fs.readdirSync(SRC_DIR).filter((e) => /^day\d+$/.test(e));
-const days    = dayDirs.length;
+const dayDirs = fs.readdirSync(SRC_DIR)
+  .filter((e) => /^day\d+$/.test(e))
+  .sort((a, b) => parseInt(a.replace("day","")) - parseInt(b.replace("day","")));
+
+const days = dayDirs.length;
+const last = days > 0 ? dayDirs[days - 1] : null;
 
 const topics = {};
 for (const bug of allBugs) {
@@ -29,7 +33,6 @@ for (const [topic, count] of Object.entries(topics).sort()) {
   console.log(`    ${topic.padEnd(22)} ${count}`);
 }
 console.log(`\n  Genererade dagar: ${days}`);
-if (days > 0) {
-  console.log(`  Totalt lösta sessioner: ~${days * allBugs.length} buggar`);
-}
+if (last) console.log(`  Senaste dag:      src/${last}/`);
+if (days > 0) console.log(`  Totalt sessioner: ~${days * allBugs.length} buggar`);
 console.log();
