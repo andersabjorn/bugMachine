@@ -13,12 +13,12 @@ const CSPROJ_PATH = path.join(SRC_DIR, "BugMachine.Current", "BugMachine.Current
 const config = require(path.join(ROOT, "bugs.config.js"));
 const allBugs = require(path.join(__dirname, "bugs.js"));
 
-const selectedBugNames = new Set(config.bugs);
-
 if (!Array.isArray(config.bugs)) {
   console.error("❌ bugs.config.js: 'bugs' måste vara en array.");
   process.exit(1);
 }
+
+const selectedBugNames = new Set(config.bugs);
 
 if (selectedBugNames.size === 0) {
   console.error("❌ Inga buggar valda i bugs.config.js.");
