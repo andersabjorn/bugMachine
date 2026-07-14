@@ -130,6 +130,7 @@ function printSummary(dayNumber, generated) {
 // Huvudflöde
 // ─────────────────────────────────────────────────────────────
 try {
+  const t0 = Date.now();
   const nextDay = getNextDayNumber();
 
   const { generated, skipped } = generateDay(nextDay);
@@ -139,6 +140,9 @@ try {
   console.log(`\n📁 Dag ${nextDay} skapad → src/day${nextDay}/`);
 
   printSummary(nextDay, generated);
+
+  const ms = Date.now() - t0;
+  console.log(`  ⏱  Klar på ${ms} ms\n`);
 
   if (skipped.length > 0) {
     console.log(`  (${skipped.length} buggar fick stub-kod — lägg till i bugs.config.js för att träna på dem)\n`);
