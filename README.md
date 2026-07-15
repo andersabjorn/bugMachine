@@ -73,7 +73,7 @@ Varje dag sparas i sin egna mapp `src/dayN/` och du får en ny uppsättning bugg
 | `npm run generate` | Generera nya buggiga filer i `src/dayN/` |
 | `npm run test` | Kör alla xUnit-tester mot aktuella filer |
 | `npm run test:quiet` | Kör tester med minimal output |
-| `npm run list` | Visa tillgängliga buggar (lägg till `--hints` för tips) |
+| `npm run list` | Visa tillgängliga buggar — ✓ markerar valda i bugs.config.js |
 | `npm run stats` | Visa statistik om projektet |
 | `npm run clear` | Rensa alla genererade filer och börja om |
 
