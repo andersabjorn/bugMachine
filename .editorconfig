@@ -16,3 +16,7 @@ trim_trailing_whitespace = false
 
 [*.{json,yml,yaml}]
 indent_size = 2
+
+[*.cs]
+indent_style = space
+indent_size = 4
