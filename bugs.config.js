@@ -3,6 +3,7 @@
 //   LinqBug, NullReferenceBug, DictionaryBug, StringReverseBug,
 //   LinkedList, MergeSort, QuickSort, TreeTraversal, AsyncAwaitBug, MinHeap
 // Kör 'npm run list' för att se svårighetsgrad och kategori.
+// Svårigheter: easy=🟢 medium=🟡 hard=🔴
 module.exports = {
   bugs: [
     "BubbleSort",
