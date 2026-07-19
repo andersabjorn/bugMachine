@@ -20,6 +20,11 @@ if (!Array.isArray(config.bugs)) {
 
 const selectedBugNames = new Set(config.bugs);
 
+if (config.bugs.length !== selectedBugNames.size) {
+  const dupes = config.bugs.filter((b, i) => config.bugs.indexOf(b) !== i);
+  console.warn(`⚠️  Dubletter i bugs.config.js ignoreras: ${dupes.join(", ")}`);
+}
+
 if (selectedBugNames.size === 0) {
   console.error("❌ Inga buggar valda i bugs.config.js.");
   console.error('   Lägg till minst en bugg, t.ex: bugs: ["BubbleSort"]');
