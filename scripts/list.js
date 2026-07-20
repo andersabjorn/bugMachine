@@ -9,6 +9,7 @@ const icons    = { easy: "🟢", medium: "🟡", hard: "🔴" };
 const labels   = { easy: "Lätt  ", medium: "Medel ", hard: "Svår  " };
 const order    = ["easy", "medium", "hard"];
 const verbose  = process.argv.includes("--hints");
+const showAll  = process.argv.includes("--all");
 
 console.log("\n╔══════════════════════════════════════════════════╗");
 console.log("║  🐛  BUG MACHINE  —  Tillgängliga buggar         ║");
@@ -20,7 +21,7 @@ for (const diff of order) {
   for (const bug of group) {
     const icon    = icons[diff]  ?? "⚪";
     const label   = labels[diff] ?? "      ";
-    const checked = selected.has(bug.name) ? "✓" : " ";
+    const checked = (!showAll && selected.has(bug.name)) ? "✓" : " ";
     console.log(`  ${checked} ${icon} ${label}  ${bug.name.padEnd(20)} ${bug.topic}`);
     if (verbose) console.log(`               💡 ${bug.hint}`);
   }
