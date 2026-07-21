@@ -1,6 +1,6 @@
 {
   "name": "bug-machine",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Generera buggar i C# att hitta och fixa - inspirerat av ThePrimeagen's kata-machine",
   "scripts": {
     "generate": "node ./scripts/generate.js",
