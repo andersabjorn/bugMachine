@@ -76,6 +76,7 @@ Varje dag sparas i sin egna mapp `src/dayN/` och du får en ny uppsättning bugg
 | `npm run list` | Visa tillgängliga buggar — ✓ markerar valda i bugs.config.js |
 | `npm run stats` | Visa statistik om projektet |
 | `npm run clear` | Rensa alla genererade filer och börja om |
+| `npm run help` | Visa alla tillgängliga kommandon |
 
 Du kan också köra testerna direkt med dotnet:
 ```bash
