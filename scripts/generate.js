@@ -111,6 +111,8 @@ function updateCsproj(dayNumber) {
 function printSummary(dayNumber, generated) {
   const diffColors = { easy: "🟢", medium: "🟡", hard: "🔴" };
   const diffLabels = { easy: "Lätt  ", medium: "Medel ", hard: "Svår  " };
+  const diffOrder  = { easy: 0, medium: 1, hard: 2 };
+  generated.sort((a, b) => (diffOrder[a.difficulty] ?? 9) - (diffOrder[b.difficulty] ?? 9));
 
   console.log("\n╔══════════════════════════════════════════════════╗");
   console.log(`║  🐛  BUG MACHINE  —  Dag ${String(dayNumber).padEnd(22)}║`);
