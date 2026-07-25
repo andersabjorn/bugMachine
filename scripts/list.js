@@ -16,7 +16,7 @@ console.log("║  🐛  BUG MACHINE  —  Tillgängliga buggar         ║");
 console.log("╚══════════════════════════════════════════════════╝\n");
 
 for (const diff of order) {
-  const group = allBugs.filter((b) => b.difficulty === diff);
+  const group = allBugs.filter((b) => b.difficulty === diff).sort((a,b) => a.name.localeCompare(b.name));
   if (group.length === 0) continue;
   for (const bug of group) {
     const icon    = icons[diff]  ?? "⚪";
