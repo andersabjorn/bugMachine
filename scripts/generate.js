@@ -149,7 +149,8 @@ try {
   printSummary(nextDay, generated);
 
   const ms = Date.now() - t0;
-  console.log(`  ⏱  Klar på ${ms} ms\n`);
+  console.log(`  ⏱  Klar på ${ms} ms`);
+  console.log();
 
   if (skipped.length > 0) {
     console.log(`  (${skipped.length} buggar fick stub-kod — lägg till i bugs.config.js för att träna på dem)\n`);
