@@ -23,7 +23,9 @@ const maxCount = Math.max(...Object.values(topics));
 console.log("\n╔══════════════════════════════════════════════════╗");
 console.log("║  🐛  BUG MACHINE  —  Statistik                   ║");
 console.log("╚══════════════════════════════════════════════════╝\n");
-console.log(`  Tillgängliga buggar: ${allBugs.length}  (🟢 ${easy} lätta · 🟡 ${medium} medelsvåra)\n`);
+const pctEasy   = Math.round(easy   / allBugs.length * 100);
+const pctMedium = Math.round(medium / allBugs.length * 100);
+console.log(`  Tillgängliga buggar: ${allBugs.length}  (🟢 ${easy} lätta ${pctEasy}% · 🟡 ${medium} medelsvåra ${pctMedium}%)\n`);
 console.log("  Per kategori:");
 for (const [topic, count] of Object.entries(topics).sort()) {
   const bar = "█".repeat(Math.round((count / maxCount) * 10));
