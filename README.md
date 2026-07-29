@@ -101,7 +101,7 @@ module.exports = {
 };
 ```
 
-Kör sedan `npm run generate` för att se effekten.
+Kör `npm run list` för att se alla alternativ (med `--hints` visas tips), sedan `npm run generate`.
 
 ---
 
