@@ -21,7 +21,7 @@ for (const diff of order) {
   for (const bug of group) {
     const icon    = icons[diff]  ?? "⚪";
     const label   = labels[diff] ?? "      ";
-    const checked = (!showAll && selected.has(bug.name)) ? "✓" : " ";
+    const checked = selected.has(bug.name) ? "✓" : " ";
     console.log(`  ${checked} ${icon} ${label}  ${bug.name.padEnd(20)} ${bug.topic}`);
     if (verbose) console.log(`               💡 ${bug.hint}`);
   }
