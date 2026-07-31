@@ -5,10 +5,10 @@
   "scripts": {
     "generate": "node ./scripts/generate.js",
     "list": "node ./scripts/list.js",
+    "stats": "node ./scripts/stats.js",
     "clear": "node ./scripts/clear.js",
     "test": "dotnet test src/BugMachine.Tests/ --logger \"console;verbosity=normal\"",
     "test:quiet": "dotnet test src/BugMachine.Tests/",
-    "stats": "node ./scripts/stats.js",
     "help": "echo \"npm run generate | list | stats | clear | test | test:quiet\""
   },
   "keywords": [
