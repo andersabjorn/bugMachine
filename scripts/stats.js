@@ -6,6 +6,7 @@ const allBugs = require("./bugs.js");
 
 const ROOT    = path.resolve(__dirname, "..");
 const SRC_DIR = path.join(ROOT, "src");
+const { version } = require(path.join(ROOT, "package.json"));
 
 const easy   = allBugs.filter((b) => b.difficulty === "easy").length;
 const medium = allBugs.filter((b) => b.difficulty === "medium").length;
@@ -21,7 +22,7 @@ for (const bug of allBugs) {
 const maxCount = Math.max(...Object.values(topics));
 
 console.log("\n╔══════════════════════════════════════════════════╗");
-console.log("║  🐛  BUG MACHINE  —  Statistik                   ║");
+console.log(`║  🐛  BUG MACHINE v${version.padEnd(3)}  —  Statistik             ║`);
 console.log("╚══════════════════════════════════════════════════╝\n");
 const pctEasy   = Math.round(easy   / allBugs.length * 100);
 const pctMedium = Math.round(medium / allBugs.length * 100);
