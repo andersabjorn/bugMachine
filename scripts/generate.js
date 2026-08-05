@@ -149,7 +149,7 @@ try {
   printSummary(nextDay, generated);
 
   const ms = Date.now() - t0;
-  console.log(`  ⏱  Klar på ${ms} ms`);
+  console.log(`  ✔  Klar på ${ms} ms`);
   console.log();
 
   if (skipped.length > 0) {
