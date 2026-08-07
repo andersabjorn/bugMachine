@@ -15,7 +15,6 @@ console.log("\n╔════════════════════�
 console.log("║  🐛  BUG MACHINE  —  Tillgängliga buggar         ║");
 console.log("╚══════════════════════════════════════════════════╝\n");
 console.log(`    ${"".padEnd(2)} ${"Svårig.".padEnd(8)}  ${"Namn".padEnd(20)} Kategori`);
-console.log(`    ${"─".repeat(50)}`);
 
 for (const diff of order) {
   const group = allBugs.filter((b) => b.difficulty === diff).sort((a,b) => a.name.localeCompare(b.name));
