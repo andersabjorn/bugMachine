@@ -22,7 +22,8 @@ for (const bug of allBugs) {
 const maxCount = Math.max(...Object.values(topics));
 
 console.log("\n╔══════════════════════════════════════════════════╗");
-console.log(`║  🐛  BUG MACHINE v${version.padEnd(3)}  —  Statistik             ║`);
+const vStr = `v${version}`.padEnd(6);
+console.log(`║  🐛  BUG MACHINE ${vStr} —  Statistik             ║`);
 console.log("╚══════════════════════════════════════════════════╝\n");
 const pctEasy   = Math.round(easy   / allBugs.length * 100);
 const pctMedium = Math.round(medium / allBugs.length * 100);
