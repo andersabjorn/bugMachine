@@ -142,7 +142,9 @@ bug-machine/
 ├── scripts/
 │   ├── generate.js             # Genererar dagens buggar
 │   ├── bugs.js                 # Alla buggdefinitioner (mallar)
-│   └── clear.js                # Rensar genererade filer
+│   ├── clear.js                # Rensar genererade filer
+│   ├── list.js                 # Listar tillgängliga buggar
+│   └── stats.js                # Visar projektstatistik
 └── src/
     ├── BugMachine.Current/     # Pekar alltid på senaste dagen (via csproj)
     │   └── BugMachine.Current.csproj
