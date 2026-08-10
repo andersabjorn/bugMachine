@@ -16,8 +16,13 @@ if (dayDirs.length === 0) {
 } else {
   for (const dir of dayDirs) {
     fs.rmSync(path.join(SRC_DIR, dir), { recursive: true, force: true });
+    console.log(`🗑️  Raderade src/${dir}/`);
   }
-  console.log(`🗑️  Raderade ${dayDirs.length} dag-mappar från src/`);
 }
 
+const csprojPath = require('path').join(ROOT,'src','BugMachine.Current','BugMachine.Current.csproj');
+if (require('fs').existsSync(csprojPath)) {
+  const xml = require('fs').readFileSync(csprojPath,'utf8');
+  if (!xml.includes('day')) { /* already clean */ }
+}
 console.log("\n✅ Klart! Kör 'npm run generate' för att börja om.\n");

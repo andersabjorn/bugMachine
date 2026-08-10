@@ -13,11 +13,16 @@ const CSPROJ_PATH = path.join(SRC_DIR, "BugMachine.Current", "BugMachine.Current
 const config = require(path.join(ROOT, "bugs.config.js"));
 const allBugs = require(path.join(__dirname, "bugs.js"));
 
-const selectedBugNames = new Set(config.bugs);
-
 if (!Array.isArray(config.bugs)) {
   console.error("❌ bugs.config.js: 'bugs' måste vara en array.");
   process.exit(1);
+}
+
+const selectedBugNames = new Set(config.bugs);
+
+if (config.bugs.length !== selectedBugNames.size) {
+  const dupes = config.bugs.filter((b, i) => config.bugs.indexOf(b) !== i);
+  console.warn(`⚠️  Dubletter i bugs.config.js ignoreras: ${dupes.join(", ")}`);
 }
 
 if (selectedBugNames.size === 0) {
@@ -106,6 +111,8 @@ function updateCsproj(dayNumber) {
 function printSummary(dayNumber, generated) {
   const diffColors = { easy: "🟢", medium: "🟡", hard: "🔴" };
   const diffLabels = { easy: "Lätt  ", medium: "Medel ", hard: "Svår  " };
+  const diffOrder  = { easy: 0, medium: 1, hard: 2 };
+  generated.sort((a, b) => (diffOrder[a.difficulty] ?? 9) - (diffOrder[b.difficulty] ?? 9));
 
   console.log("\n╔══════════════════════════════════════════════════╗");
   console.log(`║  🐛  BUG MACHINE  —  Dag ${String(dayNumber).padEnd(22)}║`);
@@ -116,7 +123,7 @@ function printSummary(dayNumber, generated) {
     const icon = diffColors[bug.difficulty] ?? "⚪";
     const label = diffLabels[bug.difficulty] ?? "      ";
     console.log(`  ${icon} ${label}  ${bug.name}`);
-    console.log(`             💡 Tips: ${bug.hint}`);
+    console.log(`             💡 ${bug.hint}`);
     console.log();
   }
 
@@ -130,6 +137,7 @@ function printSummary(dayNumber, generated) {
 // Huvudflöde
 // ─────────────────────────────────────────────────────────────
 try {
+  const t0 = Date.now();
   const nextDay = getNextDayNumber();
 
   const { generated, skipped } = generateDay(nextDay);
@@ -139,6 +147,10 @@ try {
   console.log(`\n📁 Dag ${nextDay} skapad → src/day${nextDay}/`);
 
   printSummary(nextDay, generated);
+
+  const ms = Date.now() - t0;
+  console.log(`  ⏱  Genererad på ${ms} ms`);
+  console.log();
 
   if (skipped.length > 0) {
     console.log(`  (${skipped.length} buggar fick stub-kod — lägg till i bugs.config.js för att träna på dem)\n`);
