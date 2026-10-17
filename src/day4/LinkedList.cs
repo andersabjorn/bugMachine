@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.LinkedList;
 
 // SVÅRIGHET: Medel
 // TIPS: Är Count alltid synkat med det faktiska antalet noder?

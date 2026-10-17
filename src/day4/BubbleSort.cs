@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.BubbleSort;
 
 // SVÅRIGHET: Lätt
 // TIPS: Tänk på indexgränserna i den inre loopen - kan du gå utanför arrayen?

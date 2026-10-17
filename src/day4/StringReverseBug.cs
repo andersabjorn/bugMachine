@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.StringReverseBug;
 
 // SVÅRIGHET: Lätt
 // TIPS: Rita upp indexen på papper - vilket index ska bytas med vilket?

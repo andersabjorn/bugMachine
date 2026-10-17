@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.RecursionBug;
 
 // SVÅRIGHET: Lätt
 // TIPS: Varje rekursiv funktion behöver ett basfall - vad händer när n är 1?

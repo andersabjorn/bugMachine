@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.LinqBug;
 
 // SVÅRIGHET: Lätt
 // TIPS: Vad händer om sekvensen är tom när du anropar First()?

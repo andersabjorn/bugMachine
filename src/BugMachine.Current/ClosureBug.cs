@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.ClosureBug;
 
 public static class ClosureBug
 {

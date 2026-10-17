@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.QuickSort;
 
 // SVÅRIGHET: Medel
 // TIPS: Kontrollera hur pivoten placeras i partition-steget - hamnar alla element rätt?

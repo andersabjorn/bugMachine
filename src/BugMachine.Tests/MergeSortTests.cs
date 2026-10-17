@@ -1,6 +1,6 @@
 namespace BugMachine.Tests;
 using Xunit;
-using BugMachine.Current;
+using BugMachine.Current.MergeSort;
 
 public class MergeSortTests
 {

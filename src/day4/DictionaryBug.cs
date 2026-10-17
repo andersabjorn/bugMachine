@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.DictionaryBug;
 
 // SVÅRIGHET: Lätt
 // TIPS: Vad händer om nyckeln inte finns i Dictionary när du använder [] direkt?

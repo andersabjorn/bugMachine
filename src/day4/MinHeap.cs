@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.MinHeap;
 
 // SVÅRIGHET: Medel
 // TIPS: När du väljer vilket barn att byta med i heapify-ner, ska du alltid välja vänster barn?
