@@ -71,7 +71,11 @@ function generateDay(dayNumber) {
   for (const bug of allBugs) {
     const filePath = path.join(dayDir, `${bug.name}.cs`);
     const isSelected = selectedBugNames.has(bug.name);
-    const code = isSelected ? bug.buggyCode : bug.stubCode;
+    const code = (isSelected ? bug.buggyCode : bug.stubCode)
+      .replace(
+        "namespace BugMachine.Current;",
+        `namespace BugMachine.Current.${bug.name};`
+      );
 
     fs.writeFileSync(filePath, code, "utf8");
 

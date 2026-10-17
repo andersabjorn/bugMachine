@@ -1,6 +1,6 @@
 namespace BugMachine.Tests;
 using Xunit;
-using BugMachine.Current;
+using BugMachine.Current.BinarySearch;
 
 public class BinarySearchTests
 {

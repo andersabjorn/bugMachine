@@ -1,6 +1,6 @@
 namespace BugMachine.Tests;
 using Xunit;
-using BugMachine.Current;
+using BugMachine.Current.LinkedList;
 
 public class LinkedListTests
 {

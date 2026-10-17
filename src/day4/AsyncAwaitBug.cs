@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.AsyncAwaitBug;
 
 // SVÅRIGHET: Medel
 // TIPS: Att använda .Wait() eller .Result inuti en async-metod blockerar tråden

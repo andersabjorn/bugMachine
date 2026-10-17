@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.MergeSort;
 
 // SVÅRIGHET: Medel
 // TIPS: Titta noga på merge-steget - när ska du ta från vänster vs höger sida?

@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.TreeTraversal;
 
 // SVÅRIGHET: Medel
 // TIPS: Inorder-traversering: Vänster → Root → Höger. Är ordningen korrekt i koden?

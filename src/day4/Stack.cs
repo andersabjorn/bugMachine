@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.Stack;
 
 // SVÅRIGHET: Lätt
 // TIPS: En stack är LIFO (Last In, First Out) - vilket element ska tas bort vid Pop?

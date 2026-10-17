@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.Queue;
 
 // SVÅRIGHET: Lätt
 // TIPS: En kö är FIFO (First In, First Out) - vilket element ska lämna kön vid Dequeue?

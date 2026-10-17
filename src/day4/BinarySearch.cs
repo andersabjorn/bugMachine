@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.BinarySearch;
 
 // SVÅRIGHET: Lätt
 // TIPS: Kontrollera startvärdet för 'high' - är det korrekt för ett nollbaserat index?

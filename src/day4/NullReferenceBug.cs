@@ -1,4 +1,4 @@
-namespace BugMachine.Current;
+namespace BugMachine.Current.NullReferenceBug;
 
 // SVÅRIGHET: Lätt
 // TIPS: Kan en sträng vara null? Vad händer när du anropar metoder på null?

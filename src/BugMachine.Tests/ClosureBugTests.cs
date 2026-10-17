@@ -1,5 +1,5 @@
 namespace BugMachine.Tests;
-using BugMachine.Current;
+using BugMachine.Current.ClosureBug;
 
 public class ClosureBugTests
 {
